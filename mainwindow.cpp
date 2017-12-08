@@ -9,7 +9,7 @@ MainWindow::MainWindow(QWidget *parent, QString _l, QString _p) :
 
     ///////////////////
     QSqlQuery query =  QSqlQuery(db);
-    query.exec("select id, name, sname, tname, sex, age, bday, bmounth, byear, phone_number, adress, type_of_acces from userswhere login='" + login + "' and  pass ='" + pass + "';");
+    query.exec("select id, name, sname, tname, sex, age, bday, bmounth, byear, phone_number, adress, type_of_acces from users where login='" + login + "' and  pass ='" + pass + "';");
     int id, age, bday, bmounth, byear, acces;
     bool sex;
     QString name, sname, tname, phone_number, adress;
@@ -26,7 +26,6 @@ MainWindow::MainWindow(QWidget *parent, QString _l, QString _p) :
     }
     qDebug() << id << name << sname << tname << sex << age << acces;
     user userobj(id, name, sname, tname, sex, age, bday, bmounth, byear, phone_number, adress, acces);
-    userobj.getdebuginfo();
     //////////////////
 }
 
