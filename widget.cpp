@@ -41,7 +41,7 @@ void Widget::on_loginbutton_clicked()
     while(query.next()) i++;
     if (i == 1){ qDebug() << "Логін і Пароль правильний !";
     this->hide();
-        form2 = new MainWindow(this);
+        form2 = new MainWindow(this,ui->lineEdit->text(),ui->lineEdit_2->text());
         form2->show();
     }
     else qDebug() << "Логін і Пароль не правильний !";
