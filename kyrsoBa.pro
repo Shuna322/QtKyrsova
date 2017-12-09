@@ -32,17 +32,23 @@ SOURCES += \
     user.cpp \
     widget.cpp \
     group.cpp \
-    student.cpp
+    student.cpp \
+    database.cpp \
+    facuted.cpp \
+    addstudentform.cpp
 
 HEADERS += \
     mainwindow.h \
     person.h \
-    sqlheders.h \
     user.h \
     widget.h \
     group.h \
-    student.h
+    student.h \
+    database.h \
+    facuted.h \
+    addstudentform.h
 
 FORMS += \
     mainwindow.ui \
-    widget.ui
+    widget.ui \
+    addstudentform.ui

@@ -1,11 +1,11 @@
 #ifndef GROUP_H
 #define GROUP_H
 #include "student.h"
-#include "list"
+#include "QVector"
 
 class group
 {
-    list<student> spisok;
+    vector<student> spisok;
     string name;
 public:
     group();

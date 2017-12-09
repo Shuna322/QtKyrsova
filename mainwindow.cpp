@@ -6,9 +6,9 @@ MainWindow::MainWindow(QWidget *parent, QString _l, QString _p) :
     ui(new Ui::MainWindow), login(_l), pass(_p)
 {
     ui->setupUi(this);
-
-    ///////////////////
-    QSqlQuery query =  QSqlQuery(db);
+///////////////
+//    db.connect();
+    QSqlQuery query =  QSqlQuery(db.getdb());
     query.exec("select id, name, sname, tname, sex, age, bday, bmounth, byear, phone_number, adress, type_of_acces from users where login='" + login + "' and  pass ='" + pass + "';");
     int id, age, bday, bmounth, byear, acces;
     bool sex;
@@ -40,8 +40,4 @@ void MainWindow::on_pushButton_clicked()
     QCoreApplication::exit();
 }
 
-void MainWindow::on_pushButton_2_clicked()
-{
-    ui->lineEdit->text() = userobj.getdebuginfo();
-}
 

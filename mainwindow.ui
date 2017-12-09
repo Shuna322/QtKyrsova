@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>772</width>
-    <height>388</height>
+    <width>683</width>
+    <height>363</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,52 +15,44 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QPushButton" name="pushButton">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
     <property name="geometry">
      <rect>
-      <x>690</x>
-      <y>320</y>
+      <x>590</x>
+      <y>280</y>
       <width>75</width>
       <height>23</height>
      </rect>
     </property>
     <property name="text">
-     <string>Exit</string>
+     <string>Вихід</string>
     </property>
-   </widget>
-   <widget class="QTableView" name="tableView">
-    <property name="geometry">
-     <rect>
-      <x>325</x>
-      <y>10</y>
-      <width>441</width>
-      <height>301</height>
-     </rect>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+    <property name="autoDefault">
+     <bool>false</bool>
+    </property>
+    <property name="default">
+     <bool>false</bool>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>10</y>
-      <width>75</width>
-      <height>23</height>
+      <x>30</x>
+      <y>80</y>
+      <width>121</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="lineEdit">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>320</y>
-      <width>671</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>fcfcfcf</string>
+     <string>Добавити студента</string>
     </property>
    </widget>
   </widget>
@@ -69,7 +61,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>772</width>
+     <width>683</width>
      <height>21</height>
     </rect>
    </property>
@@ -77,22 +69,5 @@
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
- <connections>
-  <connection>
-   <sender>pushButton_2</sender>
-   <signal>clicked()</signal>
-   <receiver>lineEdit</receiver>
-   <slot>paste()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>58</x>
-     <y>36</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>139</x>
-     <y>351</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>

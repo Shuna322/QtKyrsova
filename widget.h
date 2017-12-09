@@ -2,7 +2,8 @@
 #define WIDGET_H
 
 #include "mainwindow.h"
-#include "sqlheders.h"
+#include "database.h"
+#include <QCryptographicHash>
 
 
 namespace Ui {
@@ -26,7 +27,7 @@ private slots:
 
 private:
     Ui::Widget *ui;
-    QSqlDatabase db;
+    database db;
     MainWindow *form2;
 };
 
