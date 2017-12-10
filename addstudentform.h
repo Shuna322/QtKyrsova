@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <QMainWindow>
+#include <student.h>
 
 namespace Ui {
 class addStudentForm;
@@ -19,9 +20,12 @@ public:
 private slots:
     void on_pushButton_clicked();
 
+    void on_pushButton_2_clicked();
+
 private:
     Ui::addStudentForm *ui;
     QMainWindow *previousform;
+    student st;
 };
 
 #endif // ADDSTUDENTFORM_H

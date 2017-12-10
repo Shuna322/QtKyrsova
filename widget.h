@@ -4,6 +4,7 @@
 #include "mainwindow.h"
 #include "database.h"
 #include <QCryptographicHash>
+#include <QMessageBox>
 
 
 namespace Ui {

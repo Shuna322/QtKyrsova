@@ -9,23 +9,22 @@ MainWindow::MainWindow(QWidget *parent, QString _l, QString _p) :
 ///////////////
 //    db.connect();
     QSqlQuery query =  QSqlQuery(db.getdb());
-    query.exec("select id, name, sname, tname, sex, age, bday, bmounth, byear, phone_number, adress, type_of_acces from users where login='" + login + "' and  pass ='" + pass + "';");
-    int id, age, bday, bmounth, byear, acces;
+    query.exec("select name, sname, tname, sex, age, bday, bmounth, byear, phone_number, adress, type_of_acces from users where login='" + login + "' and  pass ='" + pass + "';");
+    int age, bday, bmounth, byear, acces;
     bool sex;
     QString name, sname, tname, phone_number, adress;
     while(query.next()){
-        id = query.value(0).toInt();
-        name = query.value(1).toString();
-        sname = query.value(2).toString();
-        tname = query.value(3).toString();
-        sex = query.value(4).toBool();
-        age = query.value(5).toInt();
-        bday = query.value(6).toInt(); bmounth = query.value(7).toInt(); byear = query.value(8).toInt();
-        phone_number = query.value(9).toString(); adress = query.value(10).toString();
-        acces = query.value(11).toInt();
+        name = query.value(0).toString();
+        sname = query.value(1).toString();
+        tname = query.value(2).toString();
+        sex = query.value(3).toBool();
+        age = query.value(4).toInt();
+        bday = query.value(5).toInt(); bmounth = query.value(6).toInt(); byear = query.value(7).toInt();
+        phone_number = query.value(8).toString(); adress = query.value(9).toString();
+        acces = query.value(10).toInt();
     }
-    qDebug() << id << name << sname << tname << sex << age << acces;
-    user userobj(id, name, sname, tname, sex, age, bday, bmounth, byear, phone_number, adress, acces);
+    qDebug() << name << sname << tname << sex << age << acces;
+    user userobj(name, sname, tname, sex, age, bday, bmounth, byear, phone_number, adress, acces);
     //////////////////
 }
 

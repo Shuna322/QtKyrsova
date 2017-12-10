@@ -27,17 +27,14 @@ void Widget::on_checkBox_toggled(bool checked)
 void Widget::on_loginbutton_clicked()
 {
     QByteArray s = ui->lineEdit_2->text().toLocal8Bit();
-    QByteArray hash = QCryptographicHash::​hash(ui->lineEdit_2->text().toLocal8Bit(), QCryptographicHash::Md5);
-    qDebug() << hash;
+    QString hashStr = QString("%1").arg(QString(QCryptographicHash::hash(ui->lineEdit_2->text().toUtf8(),QCryptographicHash::Md5).toHex()));
+    //QByteArray hash = QCryptographicHash::​hash(ui->lineEdit_2->text().toLocal8Bit(), QCryptographicHash::Md5);
+    qDebug() << hashStr;
     db.connect();
-    QSqlQuery query =  QSqlQuery(db.getdb());
-    query.exec("select * from users where login='" + ui->lineEdit->text() + "' and  pass ='" + ui->lineEdit_2->text() + "';");
-    int i = 0;
-    while(query.next()) i++;
-    if (i == 1){ qDebug() << "Логін і Пароль правильний !";
+    if (db.loginVerification(ui->lineEdit->text(),hashStr)){
     this->hide();
-        form2 = new MainWindow(this,ui->lineEdit->text(),ui->lineEdit_2->text());
+        form2 = new MainWindow(this,ui->lineEdit->text(),hashStr);
         form2->show();
     }
-    else qDebug() << "Логін і Пароль не правильний !";
+    else QMessageBox(QMessageBox::Icon::Warning,"Увага, помилка !","Логін і Пароль не правильний !",QMessageBox::Ok);
 }
