@@ -1,5 +1,5 @@
-#ifndef SQLHEDERS_H
-#define SQLHEDERS_H
+#ifndef DATABASE_H
+#define DATABASE_H
 #include <QWidget>
 #include <Qsql>
 #include <QSqlDriver>
@@ -11,4 +11,15 @@
 #include <QSqlRecord>
 #include <QDebug>
 #include <QSqlQuery>
-#endif // SQLHEDERS_H
+
+class database
+{
+    QSqlDatabase db;
+public:
+
+    database();
+    void connect();
+    QSqlDatabase getdb();
+};
+
+#endif // DATABASE_H

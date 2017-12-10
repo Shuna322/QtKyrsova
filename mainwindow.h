@@ -1,10 +1,9 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <string.h>
 #include <QMainWindow>
-#include "sqlheders.h"
-#include "user.h"
+#include <database.h>
+#include <user.h>
 
 namespace Ui {
 class MainWindow;
@@ -21,13 +20,11 @@ public:
 private slots:
     void on_pushButton_clicked();
 
-    void on_pushButton_2_clicked();
 
 private:
     Ui::MainWindow *ui;
     QString login, pass;
-    QSqlDatabase db;
-    user userobj;
+    database db;
 };
 
 #endif // MAINWINDOW_H

@@ -6,15 +6,6 @@ Widget::Widget(QWidget *parent) :
     ui(new Ui::Widget)
 {
     ui->setupUi(this);
-
-    db = QSqlDatabase::addDatabase("QMYSQL");
-    db.setHostName("localhost");
-    db.setDatabaseName("kyrsova");
-    db.setUserName("root");
-    db.setPassword("root");
-    if (!db.open())
-        qDebug() << db.lastError().text();
-    else qDebug() << "До бази даних підключився!";
 }
 
 Widget::~Widget()
@@ -35,7 +26,11 @@ void Widget::on_checkBox_toggled(bool checked)
 
 void Widget::on_loginbutton_clicked()
 {
-    QSqlQuery query =  QSqlQuery(db);
+    QByteArray s = ui->lineEdit_2->text().toLocal8Bit();
+//    QByteArray hash = QCryptographicHash::​hash(ui->lineEdit_2->text().toLocal8Bit(), QCryptographicHash::Md5);
+    qDebug() << s;
+    db.connect();
+    QSqlQuery query =  QSqlQuery(db.getdb());
     query.exec("select * from users where login='" + ui->lineEdit->text() + "' and  pass ='" + ui->lineEdit_2->text() + "';");
     int i = 0;
     while(query.next()) i++;

@@ -3,7 +3,7 @@
 #include "person.h"
 #include <string.h>
 
-enum accesType{administrator, teacher, visitor};
+    enum accesType{administrator, teacher, visitor};
 class user :
     protected person
 {
