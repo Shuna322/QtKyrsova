@@ -27,8 +27,8 @@ void Widget::on_checkBox_toggled(bool checked)
 void Widget::on_loginbutton_clicked()
 {
     QByteArray s = ui->lineEdit_2->text().toLocal8Bit();
-//    QByteArray hash = QCryptographicHash::​hash(ui->lineEdit_2->text().toLocal8Bit(), QCryptographicHash::Md5);
-    qDebug() << s;
+    QByteArray hash = QCryptographicHash::​hash(ui->lineEdit_2->text().toLocal8Bit(), QCryptographicHash::Md5);
+    qDebug() << hash;
     db.connect();
     QSqlQuery query =  QSqlQuery(db.getdb());
     query.exec("select * from users where login='" + ui->lineEdit->text() + "' and  pass ='" + ui->lineEdit_2->text() + "';");

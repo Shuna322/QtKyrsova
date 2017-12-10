@@ -41,3 +41,10 @@ void MainWindow::on_pushButton_clicked()
 }
 
 
+
+void MainWindow::on_pushButton_2_clicked()
+{
+    this->hide();
+    addStudent = new addStudentForm(0,this);
+    addStudent->show();
+}

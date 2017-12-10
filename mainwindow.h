@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <database.h>
 #include <user.h>
+#include "addstudentform.h"
 
 namespace Ui {
 class MainWindow;
@@ -21,10 +22,13 @@ private slots:
     void on_pushButton_clicked();
 
 
+    void on_pushButton_2_clicked();
+
 private:
     Ui::MainWindow *ui;
     QString login, pass;
     database db;
+    addStudentForm *addStudent;
 };
 
 #endif // MAINWINDOW_H
