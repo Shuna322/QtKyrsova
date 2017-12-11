@@ -35,7 +35,8 @@ SOURCES += \
     student.cpp \
     database.cpp \
     facuted.cpp \
-    addstudentform.cpp
+    addstudentform.cpp \
+    showtable.cpp
 
 HEADERS += \
     mainwindow.h \
@@ -46,9 +47,11 @@ HEADERS += \
     student.h \
     database.h \
     facuted.h \
-    addstudentform.h
+    addstudentform.h \
+    showtable.h
 
 FORMS += \
     mainwindow.ui \
     widget.ui \
-    addstudentform.ui
+    addstudentform.ui \
+    showtable.ui
