@@ -6,6 +6,8 @@ Widget::Widget(QWidget *parent) :
     ui(new Ui::Widget)
 {
     ui->setupUi(this);
+    setWindowFlags(Qt::MSWindowsFixedSizeDialogHint);
+
 }
 
 Widget::~Widget()

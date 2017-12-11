@@ -21,6 +21,21 @@ void addStudentForm::on_pushButton_clicked()
 
 void addStudentForm::on_pushButton_2_clicked()
 {
-    st(ui->lineEdit->text(),ui->lineEdit_2->text(),ui->lineEdit_3->text(),(bool)ui->comboBox->currentIndex(),ui->spinBox->value(),ui->lineEdit_4->text().toInt(),ui->lineEdit_5->text().toInt(),ui->lineEdit_6->text().toInt(),ui->lineEdit_7->text(),ui->lineEdit_8->text(),(bool)ui->comboBox_2->currentIndex());
+    QString name, sname, tname, phone_number, adress;
+    int age, bday, bmounth, byear;
+    bool sex, type_of_education;
+    name =ui->lineEdit->text();
+    sname = ui->lineEdit_2->text();
+    tname = ui->lineEdit_3->text();
+    sex =(bool) ui->comboBox->currentIndex();
+    age = ui->spinBox->value();
+    bday = ui->lineEdit_4->text().toInt();
+    bmounth = ui->lineEdit_5->text().toInt();
+    byear = ui->lineEdit_6->text().toInt();
+    phone_number = ui->lineEdit_7->text();
+    adress = ui->lineEdit_8->text();
+    type_of_education = (bool)ui->comboBox_2->currentIndex();
+    qDebug() << sex << type_of_education;
+    student st(name,sname,tname,sex,age,bday, bmounth, byear,phone_number,adress,type_of_education);
     st.addStudentToDB();
 }

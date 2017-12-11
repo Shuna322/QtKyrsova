@@ -25,7 +25,6 @@ private slots:
 private:
     Ui::addStudentForm *ui;
     QMainWindow *previousform;
-    student st;
 };
 
 #endif // ADDSTUDENTFORM_H

@@ -5,7 +5,7 @@
 class facuted
 {
     QString name;
-    vector<group> GroupList;
+ //   vector<group> GroupList;
 public:
     facuted();
 };

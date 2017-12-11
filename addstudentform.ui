@@ -63,7 +63,7 @@
      <string>Введіть інформацю про студента</string>
     </property>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <layout class="QGridLayout" name="gridLayout">
      <item row="0" column="1" colspan="3">
       <widget class="QLineEdit" name="lineEdit"/>
@@ -99,6 +99,9 @@
        </property>
        <property name="currentText">
         <string>Чоловік</string>
+       </property>
+       <property name="currentIndex">
+        <number>0</number>
        </property>
        <property name="maxVisibleItems">
         <number>10</number>

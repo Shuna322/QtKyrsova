@@ -5,7 +5,7 @@
 
 class group
 {
-    vector<student> spisok;
+  //  vector<student> spisok;
     string name;
 public:
     group();

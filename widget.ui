@@ -15,7 +15,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>C:/Users/Sashk/Desktop/Icojam-Blue-Bits-Database-search.ico</normaloff>C:/Users/Sashk/Desktop/Icojam-Blue-Bits-Database-search.ico</iconset>
+    <normaloff>../../Desktop/Icojam-Blue-Bits-Database-search.ico</normaloff>../../Desktop/Icojam-Blue-Bits-Database-search.ico</iconset>
   </property>
   <widget class="QCheckBox" name="checkBox">
    <property name="geometry">
@@ -94,8 +94,14 @@
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
      <widget class="QLineEdit" name="lineEdit">
+      <property name="inputMask">
+       <string/>
+      </property>
       <property name="echoMode">
        <enum>QLineEdit::Normal</enum>
+      </property>
+      <property name="cursorPosition">
+       <number>0</number>
       </property>
      </widget>
     </item>

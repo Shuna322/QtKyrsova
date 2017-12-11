@@ -16,5 +16,24 @@ void student::addStudentToDB()
     database db;
     db.connect();
     QSqlQuery query =  QSqlQuery(db.getdb());
-    query.exec("insert into kyrsova.students values (NULL,'"+name+"','"+sname+"','"+tname+"',"+sex+","+age+","+birth_day+","+birth_mounth+","+birth_year+",'"+phone_number+"','"+adress+"',"+type_of_education+");");
+    query.prepare("insert into students (id, name, sname, tname, sex, age, bday, bmounth, byear, phone_number, adress, type_of_education)"
+               "values (NULL,:name,:sname,:tname,:sex,:age,:birth_day,:birth_mounth,:birth_year,:phone_number,:adress,:type_of_education)");
+    query.bindValue(":name",name);
+    query.bindValue(":sname",sname);
+    query.bindValue(":tname",tname);
+    query.bindValue(":sex",sex);
+    query.bindValue(":age",age);
+    query.bindValue(":birth_day",birth_day);
+    query.bindValue(":birth_mounth",birth_mounth);
+    query.bindValue(":birth_year",birth_year);
+    query.bindValue(":phone_number",phone_number);
+    query.bindValue(":adress",adress);
+    query.bindValue(":type_of_education",type_of_education);
+    qDebug() << name << sname << tname << sex << age << birth_day << birth_mounth << birth_year << phone_number << adress << type_of_education;
+
+
+    //  "values (NULL,'"+name+"','"+sname+"','"+tname+"',"+sex+","+age+","+birth_day+","+birth_mounth+","+birth_year+",'"+phone_number+"','"+adress+"',"+type_of_education+");");
+
+    if(!query.exec())
+        qDebug() << query.lastError();
 }
