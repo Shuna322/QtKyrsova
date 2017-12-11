@@ -2,7 +2,7 @@
 #define SHOWTABLE_H
 
 #include <QWidget>
-#include "database.h"
+
 namespace Ui {
 class showTable;
 }
@@ -17,8 +17,6 @@ public:
 
 private:
     Ui::showTable *ui;
-    database db;
-    QSqlTableModel *model;
 };
 
 #endif // SHOWTABLE_H

@@ -47,4 +47,3 @@ void MainWindow::on_pushButton_2_clicked()
     addStudent = new addStudentForm(0,this);
     addStudent->show();
 }
-

@@ -29,5 +29,5 @@ bool database::loginVerification(QString _l, QString _p)
     bool i = 0;
     while(query.next()) i=true;
     if (i == 1) qDebug() << "Логін і Пароль правильний !";
-    return i;
+        return i;
 }
