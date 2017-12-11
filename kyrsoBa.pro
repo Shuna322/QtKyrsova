@@ -35,8 +35,12 @@ SOURCES += \
     student.cpp \
     database.cpp \
     facuted.cpp \
+<<<<<<< HEAD
+    addstudentform.cpp
+=======
     addstudentform.cpp \
     showtable.cpp
+>>>>>>> parent of d3e9696... fixed loginmenu, added group and faculted var to student, changet constructors. Functions add student and show table working. Still need to add some fabulos and masks to addform.
 
 HEADERS += \
     mainwindow.h \
@@ -47,11 +51,14 @@ HEADERS += \
     student.h \
     database.h \
     facuted.h \
+<<<<<<< HEAD
+    addstudentform.h
+=======
     addstudentform.h \
     showtable.h
+>>>>>>> parent of d3e9696... fixed loginmenu, added group and faculted var to student, changet constructors. Functions add student and show table working. Still need to add some fabulos and masks to addform.
 
 FORMS += \
     mainwindow.ui \
     widget.ui \
-    addstudentform.ui \
-    showtable.ui
+    addstudentform.ui

@@ -17,6 +17,12 @@ void database::connect()
     else qDebug() << "До бази даних підключився!";
 }
 
+void database::connclose()
+{
+    db.close();
+    db.removeDatabase(QSqlDatabase::defaultConnection);
+}
+
 QSqlDatabase database::getdb()
 {
     return db;
@@ -29,5 +35,5 @@ bool database::loginVerification(QString _l, QString _p)
     bool i = 0;
     while(query.next()) i=true;
     if (i == 1) qDebug() << "Логін і Пароль правильний !";
-        return i;
+    return i;
 }

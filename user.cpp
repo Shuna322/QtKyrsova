@@ -17,7 +17,7 @@ user::~user()
 
 QString user::getdebuginfo()
 {
-    qDebug() << name << sname << tname << sex << age << type_of_acces << phone_number;
+    //qDebug() << name << sname << tname << sex << age << type_of_acces << phone_number;
     return name;
 }
 

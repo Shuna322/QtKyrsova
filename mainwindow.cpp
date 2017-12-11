@@ -23,7 +23,7 @@ MainWindow::MainWindow(QWidget *parent, QString _l, QString _p) :
         phone_number = query.value(8).toString(); adress = query.value(9).toString();
         acces = query.value(10).toInt();
     }
-    qDebug() << name << sname << tname << sex << age << acces;
+    //qDebug() << name << sname << tname << sex << age << acces;
     user userobj(name, sname, tname, sex, age, bday, bmounth, byear, phone_number, adress, acces);
     //////////////////
 }
@@ -47,3 +47,12 @@ void MainWindow::on_pushButton_2_clicked()
     addStudent = new addStudentForm(0,this);
     addStudent->show();
 }
+
+<<<<<<< HEAD
+void MainWindow::on_pushButton_3_clicked()
+{
+    sTableForm = new showTable();
+    sTableForm->show();
+}
+=======
+>>>>>>> 6df2e3b452843429a89e4e9b68bea3b746dabcd2
