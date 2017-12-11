@@ -17,24 +17,82 @@
    <iconset>
     <normaloff>../../Desktop/Icojam-Blue-Bits-Database-search.ico</normaloff>../../Desktop/Icojam-Blue-Bits-Database-search.ico</iconset>
   </property>
-  <widget class="QWidget" name="">
+  <widget class="QCheckBox" name="checkBox">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>80</y>
+     <width>111</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Показати пароль</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>10</x>
      <y>10</y>
-     <width>371</width>
-     <height>131</height>
+     <width>63</width>
+     <height>61</height>
     </rect>
    </property>
-   <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="0">
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
      <widget class="QLabel" name="label">
       <property name="text">
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Логін&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
     </item>
-    <item row="0" column="1" colspan="2">
+    <item>
+     <widget class="QLabel" name="label_2">
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Пароль&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>110</y>
+     <width>361</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QPushButton" name="loginbutton">
+      <property name="text">
+       <string>Вхід</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="exitbutton">
+      <property name="text">
+       <string>Вихід</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>10</y>
+     <width>281</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
      <widget class="QLineEdit" name="lineEdit">
       <property name="inputMask">
        <string/>
@@ -47,44 +105,10 @@
       </property>
      </widget>
     </item>
-    <item row="1" column="0">
-     <widget class="QLabel" name="label_2">
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Пароль&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="1" colspan="2">
+    <item>
      <widget class="QLineEdit" name="lineEdit_2">
       <property name="echoMode">
        <enum>QLineEdit::Password</enum>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="0" colspan="2">
-     <widget class="QPushButton" name="loginbutton">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-      <property name="text">
-       <string>Вхід</string>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="2">
-     <widget class="QPushButton" name="exitbutton">
-      <property name="text">
-       <string>Вихід</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="2">
-     <widget class="QCheckBox" name="checkBox">
-      <property name="layoutDirection">
-       <enum>Qt::RightToLeft</enum>
-      </property>
-      <property name="text">
-       <string>Показати пароль</string>
       </property>
      </widget>
     </item>
@@ -92,13 +116,6 @@
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <tabstops>
-  <tabstop>lineEdit</tabstop>
-  <tabstop>lineEdit_2</tabstop>
-  <tabstop>checkBox</tabstop>
-  <tabstop>loginbutton</tabstop>
-  <tabstop>exitbutton</tabstop>
- </tabstops>
  <resources/>
  <connections>
   <connection>
@@ -108,8 +125,8 @@
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>168</x>
-     <y>68</y>
+     <x>122</x>
+     <y>56</y>
     </hint>
     <hint type="destinationlabel">
      <x>106</x>
