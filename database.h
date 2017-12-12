@@ -16,6 +16,7 @@
 class database
 {
     QSqlDatabase db;
+
 public:
 
     database();

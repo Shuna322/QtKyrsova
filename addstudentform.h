@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QMainWindow>
 #include <student.h>
+#include "database.h"
 
 namespace Ui {
 class addStudentForm;

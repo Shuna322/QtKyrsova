@@ -7,10 +7,11 @@ MainWindow::MainWindow(QWidget *parent, QString _l, QString _p) :
 {
     ui->setupUi(this);
 ///////////////
-//    db.connect();
+    db.connect();
     QSqlQuery query =  QSqlQuery(db.getdb());
-    query.exec("select name, sname, tname, sex, age, bday, bmounth, byear, phone_number, adress, type_of_acces from users where login='" + login + "' and  pass ='" + pass + "';");
-    int age, bday, bmounth, byear, acces;
+    query.exec("select name, sname, tname, sex, age, bday, phone_number, adress, type_of_acces from users where login='" + login + "' and  pass ='" + pass + "';");
+    int age, acces;
+    QDate bday;
     bool sex;
     QString name, sname, tname, phone_number, adress;
     while(query.next()){
@@ -19,13 +20,19 @@ MainWindow::MainWindow(QWidget *parent, QString _l, QString _p) :
         tname = query.value(2).toString();
         sex = query.value(3).toBool();
         age = query.value(4).toInt();
-        bday = query.value(5).toInt(); bmounth = query.value(6).toInt(); byear = query.value(7).toInt();
-        phone_number = query.value(8).toString(); adress = query.value(9).toString();
-        acces = query.value(10).toInt();
+        bday = query.value(5).toDate();
+        phone_number = query.value(6).toString(); adress = query.value(7).toString();
+        acces = query.value(8).toInt();
     }
     qDebug() << name << sname << tname << sex << age << acces;
-    user userobj(name, sname, tname, sex, age, bday, bmounth, byear, phone_number, adress, acces);
+    user userobj(name, sname, tname, sex, age, bday, phone_number, adress, acces);
     //////////////////
+    QSqlQueryModel *model= new QSqlQueryModel();
+    query.prepare("select `id`,`name`,`sname`,`tname`,`kurs`,`departament`,`group` from students");
+    query.exec();
+    model->setQuery(query);
+    ui->tableView->setModel(model);
+
 }
 
 MainWindow::~MainWindow()

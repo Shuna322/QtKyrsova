@@ -45,8 +45,8 @@
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>80</y>
+      <x>10</x>
+      <y>10</y>
       <width>121</width>
       <height>41</height>
      </rect>
@@ -55,17 +55,14 @@
      <string>Добавити студента</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_3">
+   <widget class="QTableView" name="tableView">
     <property name="geometry">
      <rect>
-      <x>170</x>
-      <y>80</y>
-      <width>131</width>
-      <height>41</height>
+      <x>140</x>
+      <y>10</y>
+      <width>531</width>
+      <height>261</height>
      </rect>
-    </property>
-    <property name="text">
-     <string>Переглнути таблицю</string>
     </property>
    </widget>
   </widget>

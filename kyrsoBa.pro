@@ -53,5 +53,5 @@ HEADERS += \
 FORMS += \
     mainwindow.ui \
     widget.ui \
-    addstudentform.ui \
-    showtable.ui
+    showtable.ui \
+    addstudentform.ui
