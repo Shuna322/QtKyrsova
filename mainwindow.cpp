@@ -6,8 +6,8 @@ MainWindow::MainWindow(QWidget *parent, QString _l, QString _p) :
     ui(new Ui::MainWindow), login(_l), pass(_p)
 {
     ui->setupUi(this);
-    setWindowFlags(Qt::MSWindowsFixedSizeDialogHint);
 ///////////////
+
     db.connect();
     QSqlQuery query =  QSqlQuery(db.getdb());
     query.exec("select name, sname, tname, sex, age, bday, phone_number, adress, type_of_acces from users where login='" + login + "' and  pass ='" + pass + "';");

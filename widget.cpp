@@ -6,8 +6,6 @@ Widget::Widget(QWidget *parent) :
     ui(new Ui::Widget)
 {
     ui->setupUi(this);
-    setWindowFlags(Qt::MSWindowsFixedSizeDialogHint);
-
 }
 
 Widget::~Widget()
@@ -36,7 +34,8 @@ void Widget::on_loginbutton_clicked()
     if (db.loginVerification(ui->lineEdit->text(),hashStr)){
     this->hide();
         form2 = new MainWindow(this,ui->lineEdit->text(),hashStr);
+        form2->setFixedSize(form2->size());
         form2->show();
     }
-    else QMessageBox(QMessageBox::Icon::Warning,"Увага, помилка !","Логін і Пароль не правильний !",QMessageBox::Ok);
+    else QMessageBox::warning(this,"Увага, помилка !","Логін і Пароль не правильний !",QMessageBox::Ok);
 }
