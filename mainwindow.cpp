@@ -6,6 +6,7 @@ MainWindow::MainWindow(QWidget *parent, QString _l, QString _p) :
     ui(new Ui::MainWindow), login(_l), pass(_p)
 {
     ui->setupUi(this);
+    setWindowFlags(Qt::MSWindowsFixedSizeDialogHint);
 ///////////////
     db.connect();
     QSqlQuery query =  QSqlQuery(db.getdb());

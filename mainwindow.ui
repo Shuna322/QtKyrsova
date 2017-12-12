@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>683</width>
-    <height>363</height>
+    <width>793</width>
+    <height>349</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,7 +20,7 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>590</x>
+      <x>710</x>
       <y>280</y>
       <width>75</width>
       <height>23</height>
@@ -60,7 +60,7 @@
      <rect>
       <x>140</x>
       <y>10</y>
-      <width>531</width>
+      <width>641</width>
       <height>261</height>
      </rect>
     </property>
@@ -71,12 +71,11 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>683</width>
+     <width>793</width>
      <height>21</height>
     </rect>
    </property>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
  <connections/>
