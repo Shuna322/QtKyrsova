@@ -31,9 +31,7 @@ CREATE TABLE `users` (
   `tname` varchar(45) NOT NULL,
   `sex` int(11) NOT NULL,
   `age` int(11) NOT NULL,
-  `bday` int(11) NOT NULL,
-  `bmounth` int(11) NOT NULL,
-  `byear` int(11) NOT NULL,
+  `bday` date NOT NULL,
   `phone_number` varchar(45) NOT NULL,
   `adress` varchar(45) NOT NULL,
   `type_of_acces` int(11) NOT NULL,
@@ -48,7 +46,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'shuna','root','Олександр','Покидко','Вікторович',0,17,25,7,2000,'+380966311636','Вул. Лесі Українки',0);
+INSERT INTO `users` VALUES (1,'root','63a9f0ea7bb98050796b649e85481845','Олександр','Покидко','Вікторович',0,17,'2000-07-25','+380966311636','вул.Лесі Українки',0);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -61,4 +59,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-12-07 19:10:23
+-- Dump completed on 2017-12-12 19:27:16

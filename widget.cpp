@@ -6,6 +6,7 @@ Widget::Widget(QWidget *parent) :
     ui(new Ui::Widget)
 {
     ui->setupUi(this);
+    db.connect();
 }
 
 Widget::~Widget()
@@ -30,7 +31,6 @@ void Widget::on_loginbutton_clicked()
     QString hashStr = QString("%1").arg(QString(QCryptographicHash::hash(ui->lineEdit_2->text().toUtf8(),QCryptographicHash::Md5).toHex()));
     //QByteArray hash = QCryptographicHash::​hash(ui->lineEdit_2->text().toLocal8Bit(), QCryptographicHash::Md5);
     qDebug() << hashStr;
-    db.connect();
     if (db.loginVerification(ui->lineEdit->text(),hashStr)){
     this->hide();
         form2 = new MainWindow(this,ui->lineEdit->text(),hashStr);

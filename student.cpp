@@ -13,7 +13,7 @@ student::student(QString _name, QString _sname, QString _tname, bool _sex, int _
 void student::addStudentToDB()
 {
     database db;
-    db.connect();
+   // db.connect();
     QSqlQuery query =  QSqlQuery(db.getdb());
     query.prepare("insert into students (`id`, `name`, `sname`, `tname`, `sex`, `group`, `departament`, `age`, `bday`, `phone_number`, `adress`, `type_of_education`, `kurs`)"
                "values (NULL,:name,:sname,:tname,:sex,:group,:departament,:age,:birth_day,:phone_number,:adress,:type_of_education,:kurs)");

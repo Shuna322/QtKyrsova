@@ -17,7 +17,7 @@
    <iconset>
     <normaloff>Icojam-Blue-Bits-Database-search.ico</normaloff>Icojam-Blue-Bits-Database-search.ico</iconset>
   </property>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>11</x>
@@ -95,8 +95,8 @@
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>122</x>
-     <y>56</y>
+     <x>245</x>
+     <y>69</y>
     </hint>
     <hint type="destinationlabel">
      <x>106</x>

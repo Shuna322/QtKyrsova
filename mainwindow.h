@@ -5,6 +5,7 @@
 #include <database.h>
 #include <user.h>
 #include "addstudentform.h"
+#include <QMessageBox>
 
 namespace Ui {
 class MainWindow;
@@ -16,6 +17,7 @@ class MainWindow : public QMainWindow
 
 public:
     explicit MainWindow(QWidget *parent = 0, QString _l = "ПОМИЛКА", QString _p = "ПОМИЛКА");
+    void getdata();
     ~MainWindow();
 
 private slots:
@@ -24,11 +26,18 @@ private slots:
 
     void on_pushButton_2_clicked();
 
+    void on_pushButton_4_clicked();
+
+    void on_pushButton_3_clicked();
+
+    void on_tableView_doubleClicked(const QModelIndex &index);
+
 private:
     Ui::MainWindow *ui;
     QString login, pass;
     database db;
     addStudentForm *addStudent;
+
 };
 
 #endif // MAINWINDOW_H

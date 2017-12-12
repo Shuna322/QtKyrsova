@@ -1,5 +1,6 @@
 #include "database.h"
-#include <QString>
+#include <QMessageBox>
+#include <QCoreApplication>
 database::database()
 {
 
@@ -13,7 +14,7 @@ void database::connect()
     db.setUserName("root");
     db.setPassword("root");
     if (!db.open())
-        qDebug() << db.lastError().text();
+        QMessageBox(QMessageBox::Critical,"Помилка підключення до бази данних",db.lastError().text()).exec();
     else qDebug() << "До бази даних підключився!";
 }
 

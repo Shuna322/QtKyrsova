@@ -16,28 +16,39 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `student`
+-- Table structure for table `students`
 --
 
-DROP TABLE IF EXISTS `student`;
+DROP TABLE IF EXISTS `students`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `student` (
-  `id` int(11) NOT NULL,
-  `Name` varchar(45) NOT NULL,
-  `Last Name` varchar(45) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE `students` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) NOT NULL,
+  `sname` varchar(45) NOT NULL,
+  `tname` varchar(45) NOT NULL,
+  `sex` int(11) NOT NULL,
+  `group` varchar(45) NOT NULL,
+  `departament` varchar(45) NOT NULL,
+  `age` int(11) NOT NULL,
+  `bday` date NOT NULL,
+  `phone_number` varchar(45) NOT NULL,
+  `adress` varchar(45) NOT NULL,
+  `type_of_education` int(11) NOT NULL,
+  `kurs` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `student`
+-- Dumping data for table `students`
 --
 
-LOCK TABLES `student` WRITE;
-/*!40000 ALTER TABLE `student` DISABLE KEYS */;
-INSERT INTO `student` VALUES (1,'Олексадр','Покидко'),(2,'Андрій','Романець'),(123,'alex','pisos');
-/*!40000 ALTER TABLE `student` ENABLE KEYS */;
+LOCK TABLES `students` WRITE;
+/*!40000 ALTER TABLE `students` DISABLE KEYS */;
+INSERT INTO `students` VALUES (8,'ftugyok','ytopk','tgo',0,'igifgirgd','tghiyugirg',43,'3949-07-08','+380 374-563-845','934759238745982',0,3),(9,'hkfbgkhd','oujhrfjdlfj','lohrnfgheujh',0,'ofhgoehgh','oerhgoehoh',38,'4503-09-03','+380 039-487-503','ojdfhghd',0,1);
+/*!40000 ALTER TABLE `students` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -49,4 +60,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-12-07 19:10:23
+-- Dump completed on 2017-12-12 20:12:52
