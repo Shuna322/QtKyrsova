@@ -1,7 +1,7 @@
 #include "addstudentform.h"
 #include "ui_addstudentform.h"
 
-addStudentForm::addStudentForm(QWidget *parent,QMainWindow *_previousform) :
+addStudentForm::addStudentForm(QWidget *parent,class MainWindow *_previousform) :
     QWidget(parent), previousform(_previousform),
     ui(new Ui::addStudentForm)
 {
@@ -40,4 +40,7 @@ void addStudentForm::on_pushButton_2_clicked()
     qDebug() << sex << type_of_education;
     student st(name,sname,tname,sex,age,bday,phone_number,adress,type_of_education,group,departament,kurs);
     st.addStudentToDB();
+    this->hide();
+    previousform->show();
+    previousform->getdata();
 }

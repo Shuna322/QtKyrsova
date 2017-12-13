@@ -9,6 +9,12 @@ Widget::Widget(QWidget *parent) :
     db.connect();
 }
 
+void Widget::clearLines()
+{
+    ui->lineEdit->setText("");
+    ui->lineEdit_2->setText("");
+}
+
 Widget::~Widget()
 {
     delete ui;
@@ -33,7 +39,7 @@ void Widget::on_loginbutton_clicked()
     qDebug() << hashStr;
     if (db.loginVerification(ui->lineEdit->text(),hashStr)){
     this->hide();
-        form2 = new MainWindow(this,ui->lineEdit->text(),hashStr);
+        form2 = new MainWindow(0,ui->lineEdit->text(),hashStr,this);
         form2->setFixedSize(form2->size());
         form2->show();
     }

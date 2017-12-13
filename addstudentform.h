@@ -2,9 +2,9 @@
 #define ADDSTUDENTFORM_H
 
 #include <QWidget>
-#include <QMainWindow>
 #include <student.h>
 #include "database.h"
+#include "mainwindow.h"
 
 namespace Ui {
 class addStudentForm;
@@ -15,7 +15,7 @@ class addStudentForm : public QWidget
     Q_OBJECT
 
 public:
-    explicit addStudentForm(QWidget *parent = 0,QMainWindow *_previousform=0);
+    explicit addStudentForm(QWidget *parent = 0,class MainWindow *_previousform=0);
     ~addStudentForm();
 
 private slots:
@@ -25,7 +25,7 @@ private slots:
 
 private:
     Ui::addStudentForm *ui;
-    QMainWindow *previousform;
+    class MainWindow *previousform;
 };
 
 #endif // ADDSTUDENTFORM_H

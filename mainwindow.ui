@@ -54,7 +54,7 @@
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>121</width>
+      <width>141</width>
       <height>41</height>
      </rect>
     </property>
@@ -65,9 +65,9 @@
    <widget class="QTableView" name="tableView">
     <property name="geometry">
      <rect>
-      <x>140</x>
+      <x>170</x>
       <y>10</y>
-      <width>701</width>
+      <width>671</width>
       <height>261</height>
      </rect>
     </property>
@@ -100,8 +100,8 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>220</y>
-      <width>121</width>
+      <y>90</y>
+      <width>141</width>
       <height>41</height>
      </rect>
     </property>
@@ -113,14 +113,25 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>140</y>
-      <width>121</width>
+      <y>60</y>
+      <width>141</width>
       <height>21</height>
      </rect>
     </property>
-    <property name="currentText">
-     <string/>
+    <property name="font">
+     <font>
+      <pointsize>8</pointsize>
+      <kerning>true</kerning>
+     </font>
     </property>
+    <property name="currentText">
+     <string>Виберіть ID студента</string>
+    </property>
+    <item>
+     <property name="text">
+      <string>Виберіть ID студента</string>
+     </property>
+    </item>
    </widget>
    <widget class="QPushButton" name="pushButton_4">
     <property name="geometry">
@@ -133,32 +144,6 @@
     </property>
     <property name="text">
      <string>Змінити користувача</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>60</y>
-      <width>121</width>
-      <height>71</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Виберіть номер &lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;студента для &lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;дій над ним&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_5">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>170</y>
-      <width>121</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Переглянути детальну інформацію</string>
     </property>
    </widget>
   </widget>
@@ -177,14 +162,21 @@
     </property>
     <addaction name="action"/>
     <addaction name="action_2"/>
+    <addaction name="separator"/>
     <addaction name="action_4"/>
     <addaction name="action_3"/>
    </widget>
    <addaction name="menu"/>
   </widget>
   <action name="action">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>Добавити студента</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+A</string>
    </property>
   </action>
   <action name="action_2">
@@ -198,8 +190,14 @@
    </property>
   </action>
   <action name="action_4">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>Змінити користувача</string>
+   </property>
+   <property name="visible">
+    <bool>true</bool>
    </property>
   </action>
  </widget>

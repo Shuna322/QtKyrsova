@@ -4,14 +4,12 @@
 #include <QModelIndex>
 #include "studentinformation.h"
 
-MainWindow::MainWindow(QWidget *parent, QString _l, QString _p) :
-    QMainWindow(parent),
+MainWindow::MainWindow(QWidget *parent, QString _l, QString _p, class Widget *_prev) :
+    QMainWindow(parent), prev(_prev),
     ui(new Ui::MainWindow), login(_l), pass(_p)
 {
     ui->setupUi(this);
 ///////////////
-
-    //db.connect();
     QSqlQuery query =  QSqlQuery(db.getdb());
     query.exec("select name, sname, tname, sex, age, bday, phone_number, adress, type_of_acces from users where login='" + login + "' and  pass ='" + pass + "';");
     int age, acces;
@@ -37,7 +35,7 @@ MainWindow::MainWindow(QWidget *parent, QString _l, QString _p) :
 void MainWindow::getdata()
 {
     QSqlQuery query =  QSqlQuery(db.getdb());
-    QSqlQueryModel *model= new QSqlQueryModel();
+    model= new QSqlQueryModel();
     query.prepare("select `id`,`name`,`sname`,`tname`,`kurs`,`departament`,`group` from students");
     query.exec();
     model->setQuery(query);
@@ -65,11 +63,14 @@ void MainWindow::on_pushButton_2_clicked()
     addStudent = new addStudentForm(0,this);
     addStudent->setFixedSize(addStudent->size());
     addStudent->show();
+    getdata();
 }
 
 void MainWindow::on_pushButton_4_clicked()
 {
-    this->parent();
+    this->hide();
+    prev->show();
+    prev->clearLines();
 }
 
 void MainWindow::on_pushButton_3_clicked()
@@ -91,9 +92,24 @@ void MainWindow::on_pushButton_3_clicked()
 void MainWindow::on_tableView_doubleClicked(const QModelIndex &index)
 {
     QModelIndex x = QModelIndex(index.sibling(index.row(),0));
-    qDebug() << x.data();
+    qDebug() << x.data().toInt();
     studentInformation infoForm;
     infoForm.setModal(true);
     infoForm.exec();
 }
 
+
+void MainWindow::on_action_triggered()
+{
+     on_pushButton_2_clicked();
+}
+
+void MainWindow::on_action_2_triggered()
+{
+    on_pushButton_3_clicked();
+}
+
+void MainWindow::on_action_3_triggered()
+{
+    on_pushButton_clicked();
+}

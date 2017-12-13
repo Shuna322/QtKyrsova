@@ -17,6 +17,7 @@ class Widget : public QWidget
 
 public:
     explicit Widget(QWidget *parent = 0);
+    void clearLines();
     ~Widget();
 
 private slots:
@@ -29,7 +30,7 @@ private slots:
 private:
     Ui::Widget *ui;
     database db;
-    MainWindow *form2;
+    class MainWindow *form2;
 };
 
 #endif // WIDGET_H

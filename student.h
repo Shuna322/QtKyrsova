@@ -2,7 +2,7 @@
 #define STUDENT_H
 #include "person.h"
 #include "database.h"
-
+#include <QMessageBox>
 class student : protected person
 {
     bool type_of_education;  //free\paid

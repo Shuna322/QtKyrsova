@@ -1,6 +1,6 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-
+#include "widget.h"
 #include <QMainWindow>
 #include <database.h>
 #include <user.h>
@@ -16,7 +16,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = 0, QString _l = "ПОМИЛКА", QString _p = "ПОМИЛКА");
+    explicit MainWindow(QWidget *parent = 0, QString _l = "ПОМИЛКА", QString _p = "ПОМИЛКА", class Widget *_prev=0);
     void getdata();
     ~MainWindow();
 
@@ -32,11 +32,19 @@ private slots:
 
     void on_tableView_doubleClicked(const QModelIndex &index);
 
+    void on_action_triggered();
+
+    void on_action_2_triggered();
+
+    void on_action_3_triggered();
+
 private:
     Ui::MainWindow *ui;
     QString login, pass;
     database db;
-    addStudentForm *addStudent;
+    class addStudentForm *addStudent;
+    class Widget *prev;
+    QSqlQueryModel *model;
 
 };
 
