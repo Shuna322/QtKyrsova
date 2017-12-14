@@ -16,7 +16,7 @@ void student::addStudentToDB()
    // db.connect();
     QSqlQuery query =  QSqlQuery(db.getdb());
     query.prepare("insert into students (`id`, `name`, `sname`, `tname`, `sex`, `group`, `departament`,  `bday`, `phone_number`, `adress`, `type_of_education`, `kurs`)"
-               "values (NULL,:name,:sname,:tname,:sex,:group,:departament,,:birth_day,:phone_number,:adress,:type_of_education,:kurs)");
+               "values (NULL,:name,:sname,:tname,:sex,:group,:departament,:birth_day,:phone_number,:adress,:type_of_education,:kurs)");
     query.bindValue(":name",name);
     query.bindValue(":sname",sname);
     query.bindValue(":tname",tname);
@@ -32,7 +32,8 @@ void student::addStudentToDB()
     query.bindValue(":kurs",kurs);
 
     if(!query.exec())
-        qDebug() << query.lastError();
+        qDebug() << query.lastError() << query.lastQuery();
+    else QMessageBox::information(0,"Повідомлення","Данні успішно додані !",QMessageBox::Ok);
 }
 
 void student::getdataFromDB(int id)
@@ -55,4 +56,24 @@ void student::getdataFromDB(int id)
        kurs = query.value(11).toInt();
    }
    qDebug() << name << sname << type_of_education << kurs << query.lastQuery();
+}
+
+bool student::gettype_of_education()
+{
+    return type_of_education;
+}
+
+QString student::getgroup()
+{
+    return group;
+}
+
+QString student::getdepartament()
+{
+    return departament;
+}
+
+QString student::getkurs()
+{
+    return (QString::number(kurs));
 }

@@ -4,6 +4,7 @@
 #include <QModelIndex>
 #include "studentinformation.h"
 
+
 MainWindow::MainWindow(QWidget *parent, QString _l, QString _p, class Widget *_prev) :
     QMainWindow(parent), prev(_prev),
     ui(new Ui::MainWindow), login(_l), pass(_p)
@@ -53,6 +54,10 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
+    QMessageBox::StandardButton reply;
+    reply = QMessageBox::question(this, "Увага","Ви дійсно хочете вийти з програми ?",
+                                  QMessageBox::Yes|QMessageBox::No);
+    if (reply == QMessageBox::Yes)
     QCoreApplication::exit();
 }
 
@@ -69,9 +74,14 @@ void MainWindow::on_pushButton_2_clicked()
 
 void MainWindow::on_pushButton_4_clicked()
 {
+    QMessageBox::StandardButton reply;
+    reply = QMessageBox::question(this, "Увага","Ви дійсно хочете змінити користувача ?",
+                                  QMessageBox::Yes|QMessageBox::No);
+    if (reply == QMessageBox::Yes){
     this->hide();
     prev->show();
     prev->clearLines();
+    }
 }
 
 void MainWindow::on_pushButton_3_clicked()
@@ -116,3 +126,9 @@ void MainWindow::on_action_3_triggered()
     on_pushButton_clicked();
 }
 
+/*
+    #include <QUrl>
+    #include <QDesktopServices>
+    QDesktopServices::openUrl(QUrl("https://i.imgur.com/xGZuM7V.png", QUrl::TolerantMode));
+    QMessageBox::information(0,"Не скучайте","На досузі можете порозгадувати",QMessageBox::Ok);
+*/
