@@ -15,7 +15,7 @@ studentInformation::studentInformation(QWidget *parent,int _id) :
         ui->label_17->setText("Ж");
         else
     ui->label_17->setText("Ч");
-    ui->label_19->setText(st.getbday().day().toString);
+    ui->label_19->setText();
 
 
 }
