@@ -13,3 +13,43 @@ person::person()
 person::~person()
 {
 }
+
+QString person::getname()
+{
+    return name;
+}
+
+QString person::getsname()
+{
+    return sname;
+}
+
+QString person::gettname()
+{
+    return tname;
+}
+
+QString person::getphone_number()
+{
+    return phone_number;
+}
+
+QString person::getadress()
+{
+    return adress;
+}
+
+bool person::getsex()
+{
+    return sex;
+}
+
+int person::getage()
+{
+    return age;
+}
+
+QDate person::getbday()
+{
+    return bday;
+}

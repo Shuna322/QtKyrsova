@@ -7,7 +7,7 @@ studentInformation::studentInformation(QWidget *parent,int _id) :
 {
     ui->setupUi(this);
     st.getdataFromDB(id);
-
+    
     ui->label_14->setText(st.getname());
     ui->label_15->setText(st.getsname());
     ui->label_16->setText(st.gettname());
@@ -15,7 +15,7 @@ studentInformation::studentInformation(QWidget *parent,int _id) :
         ui->label_17->setText("Ж");
         else
     ui->label_17->setText("Ч");
-    ui->label_19->setText(st.getbday().day().toString);
+    ui->label_19->setText();
 
 
 }

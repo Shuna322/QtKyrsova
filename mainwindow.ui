@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>850</width>
-    <height>330</height>
+    <width>747</width>
+    <height>333</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -27,7 +27,7 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>710</x>
+      <x>610</x>
       <y>280</y>
       <width>131</width>
       <height>23</height>
@@ -67,7 +67,7 @@
      <rect>
       <x>170</x>
       <y>10</y>
-      <width>671</width>
+      <width>571</width>
       <height>261</height>
      </rect>
     </property>
@@ -136,7 +136,7 @@
    <widget class="QPushButton" name="pushButton_4">
     <property name="geometry">
      <rect>
-      <x>570</x>
+      <x>470</x>
       <y>280</y>
       <width>131</width>
       <height>23</height>
@@ -152,7 +152,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>850</width>
+     <width>747</width>
      <height>21</height>
     </rect>
    </property>
@@ -188,6 +188,9 @@
    <property name="text">
     <string>Вихід</string>
    </property>
+   <property name="shortcut">
+    <string>F11</string>
+   </property>
   </action>
   <action name="action_4">
    <property name="enabled">
@@ -198,6 +201,11 @@
    </property>
    <property name="visible">
     <bool>true</bool>
+   </property>
+  </action>
+  <action name="action_6">
+   <property name="text">
+    <string>Добавити нового користувача</string>
    </property>
   </action>
  </widget>
