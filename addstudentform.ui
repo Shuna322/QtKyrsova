@@ -147,7 +147,7 @@
        <enum>QAbstractSpinBox::UpDownArrows</enum>
       </property>
       <property name="minimum">
-       <number>1</number>
+       <number>12</number>
       </property>
       <property name="maximum">
        <number>99</number>
@@ -198,7 +198,11 @@
      </widget>
     </item>
     <item row="8" column="1" colspan="2">
-     <widget class="QLineEdit" name="lineEdit_8"/>
+     <widget class="QLineEdit" name="lineEdit_8">
+      <property name="inputMask">
+       <string>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</string>
+      </property>
+     </widget>
     </item>
     <item row="9" column="0">
      <widget class="QLabel" name="label_9">
@@ -237,7 +241,7 @@
     <item row="10" column="1" colspan="2">
      <widget class="QLineEdit" name="lineEdit_4">
       <property name="inputMask">
-       <string>AAAAAAAAAAAAAAAAAAAAAAAAA</string>
+       <string>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</string>
       </property>
      </widget>
     </item>
@@ -254,7 +258,7 @@
     <item row="11" column="1" colspan="2">
      <widget class="QLineEdit" name="lineEdit_5">
       <property name="inputMask">
-       <string>AAAAAAAAAAAAAAAAAAAAAAAAA</string>
+       <string>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</string>
       </property>
      </widget>
     </item>

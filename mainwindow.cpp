@@ -54,6 +54,10 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
+    QMessageBox::StandardButton reply;
+    reply = QMessageBox::question(this, "Увага","Ви дійсно хочете вийти з програми ?",
+                                  QMessageBox::Yes|QMessageBox::No);
+    if (reply == QMessageBox::Yes)
     QCoreApplication::exit();
 }
 
@@ -70,9 +74,14 @@ void MainWindow::on_pushButton_2_clicked()
 
 void MainWindow::on_pushButton_4_clicked()
 {
+    QMessageBox::StandardButton reply;
+    reply = QMessageBox::question(this, "Увага","Ви дійсно хочете змінити користувача ?",
+                                  QMessageBox::Yes|QMessageBox::No);
+    if (reply == QMessageBox::Yes){
     this->hide();
     prev->show();
     prev->clearLines();
+    }
 }
 
 void MainWindow::on_pushButton_3_clicked()
@@ -116,4 +125,3 @@ void MainWindow::on_action_3_triggered()
 {
     on_pushButton_clicked();
 }
-

@@ -14,6 +14,7 @@ class studentInformation : public QDialog
 
 public:
     explicit studentInformation(QWidget *parent = 0, int id=0);
+    QString countAge(QDate _bday);
     ~studentInformation();
 
 private:

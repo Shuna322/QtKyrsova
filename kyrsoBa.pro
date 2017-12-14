@@ -35,7 +35,6 @@ SOURCES += \
     database.cpp \
     addstudentform.cpp \
     studentinformation.cpp \
-    dellbutton.cpp
 
 HEADERS += \
     mainwindow.h \
@@ -46,11 +45,9 @@ HEADERS += \
     database.h \
     addstudentform.h \
     studentinformation.h \
-    dellbutton.h
 
 FORMS += \
     mainwindow.ui \
     widget.ui \
     addstudentform.ui \
     studentinformation.ui \
-    dellbutton.ui

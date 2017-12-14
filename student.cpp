@@ -63,3 +63,23 @@ void student::getdataFromDB(int id)
    }
    qDebug() << name << sname << type_of_education << kurs << query.lastQuery();
 }
+
+bool student::gettype_of_education()
+{
+    return type_of_education;
+}
+
+QString student::getgroup()
+{
+    return group;
+}
+
+QString student::getdepartament()
+{
+    return departament;
+}
+
+QString student::getkurs()
+{
+    return (QString::number(kurs));
+}
