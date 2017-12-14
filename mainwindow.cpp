@@ -42,6 +42,8 @@ void MainWindow::getdata()
     ui->tableView->setModel(model);
     ui->comboBox->setModel(model);
     ui->comboBox->setModelColumn(0);
+    ui->tableView->setColumnWidth(0,30);
+    ui->tableView->setColumnWidth(4,30);
 }
 
 MainWindow::~MainWindow()
@@ -93,8 +95,9 @@ void MainWindow::on_tableView_doubleClicked(const QModelIndex &index)
 {
     QModelIndex x = QModelIndex(index.sibling(index.row(),0));
     qDebug() << x.data().toInt();
-    studentInformation infoForm;
+    studentInformation infoForm(0,x.data().toInt());
     infoForm.setModal(true);
+    infoForm.setFixedSize(infoForm.size());
     infoForm.exec();
 }
 
@@ -113,3 +116,4 @@ void MainWindow::on_action_3_triggered()
 {
     on_pushButton_clicked();
 }
+

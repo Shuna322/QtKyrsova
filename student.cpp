@@ -40,3 +40,26 @@ void student::addStudentToDB()
     if(!query.exec())
         qDebug() << query.lastError();
 }
+
+void student::getdataFromDB(int id)
+{
+   database db;
+   QSqlQuery query =  QSqlQuery(db.getdb());
+   query.prepare("select * from students where id = :id;");
+   query.bindValue(":id",id);
+   query.exec();
+   while(query.next()){
+       name = query.value(1).toString();
+       sname = query.value(2).toString();
+       tname = query.value(3).toString();
+       sex = query.value(4).toBool();
+       group = query.value(5).toString();
+       departament = query.value(6).toString();
+       age = query.value(7).toInt();
+       bday = query.value(8).toDate();
+       phone_number = query.value(9).toString(); adress = query.value(10).toString();
+       type_of_education = query.value(11).toInt();
+       kurs = query.value(12).toInt();
+   }
+   qDebug() << name << sname << type_of_education << kurs << query.lastQuery();
+}
