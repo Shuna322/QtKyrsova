@@ -9,7 +9,7 @@ class user :
 {
     int type_of_acces;
 public:
-    user(QString _name, QString _sname, QString _tname, bool _sex, int _age, QDate _bday, QString _phone_number, QString _adress, int _type_of_acces);
+    user(QString _name, QString _sname, QString _tname, bool _sex, QDate _bday, QString _phone_number, QString _adress, int _type_of_acces);
     user();
     ~user();
     QString getdebuginfo();

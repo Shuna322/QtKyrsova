@@ -11,8 +11,8 @@ MainWindow::MainWindow(QWidget *parent, QString _l, QString _p, class Widget *_p
     ui->setupUi(this);
 ///////////////
     QSqlQuery query =  QSqlQuery(db.getdb());
-    query.exec("select name, sname, tname, sex, age, bday, phone_number, adress, type_of_acces from users where login='" + login + "' and  pass ='" + pass + "';");
-    int age, acces;
+    query.exec("select name, sname, tname, sex, bday, phone_number, adress, type_of_acces from users where login='" + login + "' and  pass ='" + pass + "';");
+    int acces;
     QDate bday;
     bool sex;
     QString name, sname, tname, phone_number, adress;
@@ -21,12 +21,11 @@ MainWindow::MainWindow(QWidget *parent, QString _l, QString _p, class Widget *_p
         sname = query.value(1).toString();
         tname = query.value(2).toString();
         sex = query.value(3).toBool();
-        age = query.value(4).toInt();
-        bday = query.value(5).toDate();
-        phone_number = query.value(6).toString(); adress = query.value(7).toString();
-        acces = query.value(8).toInt();
+        bday = query.value(4).toDate();
+        phone_number = query.value(5).toString(); adress = query.value(6).toString();
+        acces = query.value(7).toInt();
     }
-    user userobj(name, sname, tname, sex, age, bday, phone_number, adress, acces);
+    user userobj(name, sname, tname, sex, bday, phone_number, adress, acces);
     //////////////////
     this->getdata();
 
