@@ -16,24 +16,7 @@ studentInformation::studentInformation(QWidget *parent,int _id) :
         else
     ui->label_17->setText("Ч");
     ui->label_19->setText();
-<<<<<<< HEAD
-    else
-        ui->label_17->setText("Ч");
-   // countAge(st.getbday()).toString();
-    ui->label_18->setText(countAge(st.getbday()));
-    ui->label_19->setText(((((day.toString()+"/")+month.toString())+"/")+year.toString()));
-    ui->label_20->setText(st.getphone_number());
-    ui->label_21->setText(st.getadress());
-    if(st.gettype_of_education())
-        ui->label_22->setText("Державна");
-    else ui->label_22->setText("Платна");
-    ui->label_23->setText(st.getdepartament());
-    ui->label_24->setText(st.getgroup());
-    ui->label_25->setText(st.getkurs());
-}
-=======
 
->>>>>>> parent of 071e244... Merge branch 'master' of https://github.com/Shuna322/aloha-shaka-laka
 
 }
 

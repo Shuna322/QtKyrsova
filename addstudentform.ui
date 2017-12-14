@@ -145,23 +145,6 @@
       </property>
       <property name="text">
        <string>Стать</string>
-<<<<<<< HEAD
-       <string>Вік</string>
-      </property>
-     </widget>
-    </item>
-    <item row="5" column="1" colspan="2">
-     <widget class="QSpinBox" name="spinBox">
-      <property name="buttonSymbols">
-       <enum>QAbstractSpinBox::UpDownArrows</enum>
-      </property>
-      <property name="minimum">
-       <number>12</number>
-      </property>
-      <property name="maximum">
-       <number>99</number>
-=======
->>>>>>> parent of 071e244... Merge branch 'master' of https://github.com/Shuna322/aloha-shaka-laka
       </property>
      </widget>
     </item>
@@ -200,15 +183,6 @@
     </item>
     <item row="7" column="1" colspan="2">
      <widget class="QLineEdit" name="lineEdit_8"/>
-<<<<<<< HEAD
-    <item row="8" column="1" colspan="2">
-     <widget class="QLineEdit" name="lineEdit_8">
-      <property name="inputMask">
-       <string>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</string>
-      </property>
-     </widget>
-=======
->>>>>>> parent of 071e244... Merge branch 'master' of https://github.com/Shuna322/aloha-shaka-laka
     </item>
     <item row="8" column="0">
      <widget class="QLabel" name="label_9">
@@ -251,46 +225,7 @@
       </property>
      </widget>
     </item>
-<<<<<<< HEAD
     <item row="11" column="1" colspan="2">
-    <item row="10" column="1" colspan="2">
-     <widget class="QLineEdit" name="lineEdit_4">
-      <property name="inputMask">
-       <string>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</string>
-      </property>
-     </widget>
-    </item>
-    <item row="11" column="0">
-     <widget class="QLabel" name="label_12">
-      <property name="layoutDirection">
-       <enum>Qt::RightToLeft</enum>
-      </property>
-      <property name="text">
-       <string>Група</string>
-      </property>
-     </widget>
-    </item>
-    <item row="11" column="1" colspan="2">
-     <widget class="QLineEdit" name="lineEdit_5">
-      <property name="inputMask">
-       <string>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</string>
-      </property>
-     </widget>
-    </item>
-    <item row="12" column="0">
-     <widget class="QLabel" name="label_13">
-      <property name="layoutDirection">
-       <enum>Qt::RightToLeft</enum>
-      </property>
-      <property name="text">
-       <string>Курс зарахування</string>
-      </property>
-     </widget>
-    </item>
-    <item row="12" column="1" colspan="2">
-=======
-    <item row="11" column="1" colspan="2">
->>>>>>> parent of 071e244... Merge branch 'master' of https://github.com/Shuna322/aloha-shaka-laka
      <widget class="QComboBox" name="comboBox_3">
       <item>
        <property name="text">
