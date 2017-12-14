@@ -38,7 +38,7 @@ CREATE TABLE `students` (
   `kurs` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -47,7 +47,7 @@ CREATE TABLE `students` (
 
 LOCK TABLES `students` WRITE;
 /*!40000 ALTER TABLE `students` DISABLE KEYS */;
-INSERT INTO `students` VALUES (8,'ftugyok','ytopk','tgo',0,'igifgirgd','tghiyugirg',43,'3949-07-08','+380 374-563-845','934759238745982',0,3),(9,'hkfbgkhd','oujhrfjdlfj','lohrnfgheujh',0,'ofhgoehgh','oerhgoehoh',38,'4503-09-03','+380 039-487-503','ojdfhghd',0,1);
+INSERT INTO `students` VALUES (12,'rstdfytguyh','etdrfytguhj','xdfchvgjbkj',0,'cbvn','cbvnbm',67,'6879-07-05','+380 657-689-057','drcfyvgbhnjgfvh',0,1),(13,'Андрій','Романець','Володимирович',0,'пасрмпорил','пасрпмоилт',17,'2000-08-18','+380 888-888-888','впасроло',0,1);
 /*!40000 ALTER TABLE `students` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -60,4 +60,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-12-12 19:27:16
+-- Dump completed on 2017-12-14 18:56:01
