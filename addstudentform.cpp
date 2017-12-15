@@ -22,14 +22,13 @@ void addStudentForm::on_pushButton_clicked()
 void addStudentForm::on_pushButton_2_clicked()
 {
     QString name, sname, tname, phone_number, adress, departament, group;
-    int age, kurs;
+    int kurs;
     QDate bday;
     bool sex, type_of_education;
     name =ui->lineEdit->text();
     sname = ui->lineEdit_2->text();
     tname = ui->lineEdit_3->text();
     sex =(bool) ui->comboBox->currentIndex();
-    age = ui->spinBox->value();
     bday = ui->dateEdit->date();
     departament =ui->lineEdit_4->text();
     group = ui->lineEdit_5->text();
@@ -38,7 +37,7 @@ void addStudentForm::on_pushButton_2_clicked()
     adress = ui->lineEdit_8->text();
     type_of_education = (bool)ui->comboBox_2->currentIndex();
     qDebug() << sex << type_of_education;
-    student st(name,sname,tname,sex,age,bday,phone_number,adress,type_of_education,group,departament,kurs);
+    student st(name,sname,tname,sex,bday,phone_number,adress,type_of_education,group,departament,kurs);
     st.addStudentToDB();
     this->hide();
     previousform->show();

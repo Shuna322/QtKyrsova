@@ -43,5 +43,24 @@ void Widget::on_loginbutton_clicked()
         form2->setFixedSize(form2->size());
         form2->show();
     }
-    else QMessageBox::warning(this,"Увага, помилка !","Логін і Пароль не правильний !",QMessageBox::Ok);
+    else {
+        QMessageBox::warning(this,"Увага, помилка !","Комбінаця Логін і Пароль не правильна !",QMessageBox::Ok);
+        ui->lineEdit_2->setText("");
+    }
+}
+
+void Widget::on_lineEdit_2_textChanged(const QString &arg1)
+{
+    if(ui->lineEdit->text() != "" && ui->lineEdit_2->text() != "")
+        ui->loginbutton->setEnabled(1);
+    else
+        ui->loginbutton->setEnabled(0);
+}
+
+void Widget::on_lineEdit_textChanged(const QString &arg1)
+{
+    if(ui->lineEdit->text() != "" && ui->lineEdit_2->text() != "")
+        ui->loginbutton->setEnabled(1);
+    else
+        ui->loginbutton->setEnabled(0);
 }

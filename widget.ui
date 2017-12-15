@@ -70,8 +70,23 @@
     </item>
     <item row="3" column="0" colspan="2">
      <widget class="QPushButton" name="loginbutton">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
       <property name="text">
        <string>Вхід</string>
+      </property>
+      <property name="checkable">
+       <bool>false</bool>
+      </property>
+      <property name="autoDefault">
+       <bool>false</bool>
+      </property>
+      <property name="default">
+       <bool>false</bool>
+      </property>
+      <property name="flat">
+       <bool>false</bool>
       </property>
      </widget>
     </item>

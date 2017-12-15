@@ -4,6 +4,7 @@
 #include <QModelIndex>
 #include "studentinformation.h"
 
+
 MainWindow::MainWindow(QWidget *parent, QString _l, QString _p, class Widget *_prev) :
     QMainWindow(parent), prev(_prev),
     ui(new Ui::MainWindow), login(_l), pass(_p)
@@ -11,8 +12,8 @@ MainWindow::MainWindow(QWidget *parent, QString _l, QString _p, class Widget *_p
     ui->setupUi(this);
 ///////////////
     QSqlQuery query =  QSqlQuery(db.getdb());
-    query.exec("select name, sname, tname, sex, age, bday, phone_number, adress, type_of_acces from users where login='" + login + "' and  pass ='" + pass + "';");
-    int age, acces;
+    query.exec("select name, sname, tname, sex, bday, phone_number, adress, type_of_acces from users where login='" + login + "' and  pass ='" + pass + "';");
+    int acces;
     QDate bday;
     bool sex;
     QString name, sname, tname, phone_number, adress;
@@ -21,12 +22,11 @@ MainWindow::MainWindow(QWidget *parent, QString _l, QString _p, class Widget *_p
         sname = query.value(1).toString();
         tname = query.value(2).toString();
         sex = query.value(3).toBool();
-        age = query.value(4).toInt();
-        bday = query.value(5).toDate();
-        phone_number = query.value(6).toString(); adress = query.value(7).toString();
-        acces = query.value(8).toInt();
+        bday = query.value(4).toDate();
+        phone_number = query.value(5).toString(); adress = query.value(6).toString();
+        acces = query.value(7).toInt();
     }
-    user userobj(name, sname, tname, sex, age, bday, phone_number, adress, acces);
+    user userobj(name, sname, tname, sex, bday, phone_number, adress, acces);
     //////////////////
     this->getdata();
 
@@ -107,6 +107,8 @@ void MainWindow::on_tableView_doubleClicked(const QModelIndex &index)
     studentInformation infoForm(0,x.data().toInt());
     infoForm.setModal(true);
     infoForm.setFixedSize(infoForm.size());
+    Qt::WindowFlags flags(Qt::WindowCloseButtonHint);
+    infoForm.setWindowFlags(flags);
     infoForm.exec();
 }
 
@@ -124,4 +126,19 @@ void MainWindow::on_action_2_triggered()
 void MainWindow::on_action_3_triggered()
 {
     on_pushButton_clicked();
+}
+
+/*
+    #include <QUrl>
+    #include <QDesktopServices>
+    QDesktopServices::openUrl(QUrl("https://i.imgur.com/xGZuM7V.png", QUrl::TolerantMode));
+    QMessageBox::information(0,"Не скучайте","На досузі можете порозгадувати",QMessageBox::Ok);
+*/
+
+void MainWindow::on_pushButton_6_clicked()
+{
+    changeStudent = new changeStudentInfo(0,this,ui->comboBox->currentText().toInt());
+    changeStudent->setFixedSize(changeStudent->size());
+    this->hide();
+    changeStudent->show();
 }

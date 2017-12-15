@@ -11,8 +11,9 @@ class student : public person
 
 public:
     student();
-    student(QString _name,QString _sname,QString _tname, bool _sex, int _age, QDate _bday,QString _phone_number, QString _adress, bool _type_of_education, QString _group, QString _departament, int _kurs);
+    student(QString _name,QString _sname,QString _tname, bool _sex, QDate _bday,QString _phone_number, QString _adress, bool _type_of_education, QString _group, QString _departament, int _kurs);
     void addStudentToDB();
+    void replaceStudentInDB(int id);
     void getdataFromDB(int id);
     bool gettype_of_education();
     QString getgroup();
