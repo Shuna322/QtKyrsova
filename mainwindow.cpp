@@ -2,6 +2,8 @@
 #include "ui_mainwindow.h"
 #include <QDebug>
 #include <QModelIndex>
+#include <QUrl>
+#include <QDesktopServices>
 #include "studentinformation.h"
 
 
@@ -104,12 +106,7 @@ void MainWindow::on_tableView_doubleClicked(const QModelIndex &index)
 {
     QModelIndex x = QModelIndex(index.sibling(index.row(),0));
     qDebug() << x.data().toInt();
-    studentInformation infoForm(0,x.data().toInt());
-    infoForm.setModal(true);
-    infoForm.setFixedSize(infoForm.size());
-    Qt::WindowFlags flags(Qt::WindowCloseButtonHint);
-    infoForm.setWindowFlags(flags);
-    infoForm.exec();
+    openFormWithStudentInfo(x.data().toInt());
 }
 
 
@@ -128,12 +125,11 @@ void MainWindow::on_action_3_triggered()
     on_pushButton_clicked();
 }
 
-/*
-    #include <QUrl>
-    #include <QDesktopServices>
-    QDesktopServices::openUrl(QUrl("https://i.imgur.com/xGZuM7V.png", QUrl::TolerantMode));
-    QMessageBox::information(0,"Не скучайте","На досузі можете порозгадувати",QMessageBox::Ok);
-*/
+void MainWindow::on_pushButton_8_clicked()
+{
+QDesktopServices::openUrl(QUrl("https://i.imgur.com/xGZuM7V.png", QUrl::TolerantMode));
+QMessageBox::information(0,"Не скучайте","На досузі можете порозгадувати",QMessageBox::Ok);
+}
 
 void MainWindow::on_pushButton_6_clicked()
 {
@@ -142,3 +138,20 @@ void MainWindow::on_pushButton_6_clicked()
     this->hide();
     changeStudent->show();
 }
+
+void MainWindow::on_pushButton_7_clicked()
+{
+    openFormWithStudentInfo(ui->comboBox->currentText().toInt());
+}
+
+void MainWindow::openFormWithStudentInfo(int x)
+{
+    studentInformation infoForm(0,x);
+    infoForm.setModal(true);
+    infoForm.setFixedSize(infoForm.size());
+    Qt::WindowFlags flags(Qt::WindowCloseButtonHint);
+    infoForm.setWindowFlags(flags);
+    infoForm.exec();
+}
+
+
