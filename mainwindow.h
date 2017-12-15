@@ -6,6 +6,7 @@
 #include <user.h>
 #include "addstudentform.h"
 #include "changestudentinfo.h"
+#include "adduserform.h"
 #include <QMessageBox>
 
 namespace Ui {
@@ -47,6 +48,8 @@ private slots:
 
     void on_pushButton_8_clicked();
 
+    void on_pushButton_5_clicked();
+
 private:
     Ui::MainWindow *ui;
     QString login, pass;
@@ -54,6 +57,7 @@ private:
     class addStudentForm *addStudent;
     class changeStudentInfo *changeStudent;
     class Widget *prev;
+    class addUserForm *addUser;
     QSqlQueryModel *model;
 
 };

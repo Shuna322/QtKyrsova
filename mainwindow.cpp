@@ -154,4 +154,10 @@ void MainWindow::openFormWithStudentInfo(int x)
     infoForm.exec();
 }
 
-
+void MainWindow::on_pushButton_5_clicked()
+{
+    addUser = new addUserForm(0,this);
+    this->hide();
+    addUser->setFixedSize(addUser->size());
+    addUser->show();
+}

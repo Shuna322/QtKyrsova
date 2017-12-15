@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>747</width>
-    <height>333</height>
+    <height>295</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -28,7 +28,7 @@
     <property name="geometry">
      <rect>
       <x>600</x>
-      <y>280</y>
+      <y>240</y>
       <width>141</width>
       <height>23</height>
      </rect>
@@ -68,7 +68,7 @@
       <x>170</x>
       <y>10</y>
       <width>571</width>
-      <height>261</height>
+      <height>221</height>
      </rect>
     </property>
     <property name="textElideMode">
@@ -100,7 +100,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>110</y>
+      <y>90</y>
       <width>141</width>
       <height>41</height>
      </rect>
@@ -113,7 +113,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>80</y>
+      <y>60</y>
       <width>141</width>
       <height>21</height>
      </rect>
@@ -137,7 +137,7 @@
     <property name="geometry">
      <rect>
       <x>450</x>
-      <y>280</y>
+      <y>240</y>
       <width>141</width>
       <height>23</height>
      </rect>
@@ -150,7 +150,7 @@
     <property name="geometry">
      <rect>
       <x>300</x>
-      <y>280</y>
+      <y>240</y>
       <width>141</width>
       <height>23</height>
      </rect>
@@ -163,7 +163,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>160</y>
+      <y>140</y>
       <width>141</width>
       <height>41</height>
      </rect>
@@ -177,7 +177,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>210</y>
+      <y>190</y>
       <width>141</width>
       <height>41</height>
      </rect>
@@ -190,10 +190,10 @@
    <widget class="QPushButton" name="pushButton_8">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>290</y>
-      <width>21</width>
-      <height>21</height>
+      <x>580</x>
+      <y>240</y>
+      <width>31</width>
+      <height>20</height>
      </rect>
     </property>
     <property name="text">
@@ -203,6 +203,16 @@
      <bool>true</bool>
     </property>
    </widget>
+   <zorder>pushButton_8</zorder>
+   <zorder>pushButton</zorder>
+   <zorder>pushButton_2</zorder>
+   <zorder>tableView</zorder>
+   <zorder>pushButton_3</zorder>
+   <zorder>comboBox</zorder>
+   <zorder>pushButton_4</zorder>
+   <zorder>pushButton_5</zorder>
+   <zorder>pushButton_6</zorder>
+   <zorder>pushButton_7</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
