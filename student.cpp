@@ -36,6 +36,36 @@ void student::addStudentToDB()
     else QMessageBox::information(0,"Повідомлення","Данні успішно додані !",QMessageBox::Ok);
 }
 
+void student::replaceStudentInDB(int id)
+{
+    database db;
+   // db.connect();
+    qDebug () << id;
+    QSqlQuery query =  QSqlQuery(db.getdb());
+    query.prepare("replace into students (`id`, `name`, `sname`, `tname`, `sex`, `group`, `departament`,  `bday`, `phone_number`, `adress`, `type_of_education`, `kurs`)"
+               "values (:id,:name,:sname,:tname,:sex,:group,:departament,:birth_day,:phone_number,:adress,:type_of_education,:kurs)");
+    query.bindValue(":id",id);
+    query.bindValue(":name",name);
+    query.bindValue(":sname",sname);
+    query.bindValue(":tname",tname);
+    query.bindValue(":sex",sex);
+    query.bindValue(":group",group);
+    query.bindValue(":departament",departament);
+    query.bindValue(":group",group);
+    query.bindValue(":departament",departament);
+    query.bindValue(":birth_day",bday);
+    query.bindValue(":phone_number",phone_number);
+    query.bindValue(":adress",adress);
+    query.bindValue(":type_of_education",type_of_education);
+    query.bindValue(":kurs",kurs);
+    if(!query.exec())
+        qDebug() << query.lastError() << "\n" << query.lastQuery();
+    else {
+        QMessageBox::information(0,"Повідомлення","Данні успішно оновлені !",QMessageBox::Ok);
+        qDebug() << query.lastError() << "\n" << query.lastQuery();
+    }
+}
+
 void student::getdataFromDB(int id)
 {
    database db;

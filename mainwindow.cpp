@@ -107,6 +107,8 @@ void MainWindow::on_tableView_doubleClicked(const QModelIndex &index)
     studentInformation infoForm(0,x.data().toInt());
     infoForm.setModal(true);
     infoForm.setFixedSize(infoForm.size());
+    Qt::WindowFlags flags(Qt::WindowCloseButtonHint);
+    infoForm.setWindowFlags(flags);
     infoForm.exec();
 }
 
@@ -132,3 +134,11 @@ void MainWindow::on_action_3_triggered()
     QDesktopServices::openUrl(QUrl("https://i.imgur.com/xGZuM7V.png", QUrl::TolerantMode));
     QMessageBox::information(0,"Не скучайте","На досузі можете порозгадувати",QMessageBox::Ok);
 */
+
+void MainWindow::on_pushButton_6_clicked()
+{
+    changeStudent = new changeStudentInfo(0,this,ui->comboBox->currentText().toInt());
+    changeStudent->setFixedSize(changeStudent->size());
+    this->hide();
+    changeStudent->show();
+}

@@ -45,7 +45,7 @@ void Widget::on_loginbutton_clicked()
     }
     else {
         QMessageBox::warning(this,"Увага, помилка !","Комбінаця Логін і Пароль не правильна !",QMessageBox::Ok);
-    ui->lineEdit_2->setText("");
+        ui->lineEdit_2->setText("");
     }
 }
 
