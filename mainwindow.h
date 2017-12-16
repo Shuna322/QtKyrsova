@@ -25,7 +25,6 @@ public:
 private slots:
     void on_pushButton_clicked();
 
-
     void on_pushButton_2_clicked();
 
     void on_pushButton_4_clicked();
@@ -50,6 +49,8 @@ private slots:
 
     void on_pushButton_5_clicked();
 
+    void createUserObj();
+
 private:
     Ui::MainWindow *ui;
     QString login, pass;
@@ -59,6 +60,7 @@ private:
     class Widget *prev;
     class addUserForm *addUser;
     QSqlQueryModel *model;
+    user userobj;
 
 };
 

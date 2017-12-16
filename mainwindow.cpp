@@ -12,24 +12,7 @@ MainWindow::MainWindow(QWidget *parent, QString _l, QString _p, class Widget *_p
     ui(new Ui::MainWindow), login(_l), pass(_p)
 {
     ui->setupUi(this);
-///////////////
-    QSqlQuery query =  QSqlQuery(db.getdb());
-    query.exec("select name, sname, tname, sex, bday, phone_number, adress, type_of_acces from users where login='" + login + "' and  pass ='" + pass + "';");
-    int acces;
-    QDate bday;
-    bool sex;
-    QString name, sname, tname, phone_number, adress;
-    while(query.next()){
-        name = query.value(0).toString();
-        sname = query.value(1).toString();
-        tname = query.value(2).toString();
-        sex = query.value(3).toBool();
-        bday = query.value(4).toDate();
-        phone_number = query.value(5).toString(); adress = query.value(6).toString();
-        acces = query.value(7).toInt();
-    }
-    user userobj(name, sname, tname, sex, bday, phone_number, adress, acces);
-    //////////////////
+    createUserObj();
     this->getdata();
 
 }
@@ -160,4 +143,25 @@ void MainWindow::on_pushButton_5_clicked()
     this->hide();
     addUser->setFixedSize(addUser->size());
     addUser->show();
+}
+
+void MainWindow::createUserObj()
+{
+    QSqlQuery query =  QSqlQuery(db.getdb());
+    query.exec("select name, sname, tname, sex, bday, phone_number, adress, type_of_acces from users where login='" + login + "' and  pass ='" + pass + "';");
+    int acces;
+    QDate bday;
+    bool sex;
+    QString name, sname, tname, phone_number, adress;
+    while(query.next()){
+        name = query.value(0).toString();
+        sname = query.value(1).toString();
+        tname = query.value(2).toString();
+        sex = query.value(3).toBool();
+        bday = query.value(4).toDate();
+        phone_number = query.value(5).toString(); adress = query.value(6).toString();
+        acces = query.value(7).toInt();
+    }
+    userobj = user(name, sname, tname, sex, bday, phone_number, adress, acces);
+
 }
