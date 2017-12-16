@@ -28,7 +28,7 @@ MainWindow::MainWindow(QWidget *parent, QString _l, QString _p, class Widget *_p
         phone_number = query.value(5).toString(); adress = query.value(6).toString();
         acces = query.value(7).toInt();
     }
-    user userobj(name, sname, tname, sex, bday, phone_number, adress, acces);
+    user userobj(name,sname,tname,sex,bday,phone_number,adress,acces,login,pass);
     //////////////////
     this->getdata();
 

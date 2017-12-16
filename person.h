@@ -2,7 +2,8 @@
 #define PERSON_H
 #include <QDate>
 #include <QString>
-using namespace std;
+#include "database.h"
+#include <QMessageBox>
 class person
 {
 protected:

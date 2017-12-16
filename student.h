@@ -1,8 +1,7 @@
 #ifndef STUDENT_H
 #define STUDENT_H
 #include "person.h"
-#include "database.h"
-#include <QMessageBox>
+
 class student : public person
 {
     bool type_of_education;  //free\paid
