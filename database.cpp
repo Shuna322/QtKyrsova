@@ -9,10 +9,10 @@ database::database()
 void database::connect()
 {
     db = QSqlDatabase::addDatabase("QMYSQL");
-    db.setHostName("localhost");
+    db.setHostName("147.135.135.165");
     db.setDatabaseName("kyrsova");
-    db.setUserName("root");
-    db.setPassword("root");
+    db.setUserName("shuna");
+    db.setPassword("OOP_kyrsa4");
     if (!db.open())
         QMessageBox(QMessageBox::Critical,"Помилка підключення до бази данних",db.lastError().text()).exec();
     else qDebug() << "До бази даних підключився!";
