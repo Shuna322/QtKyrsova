@@ -12,6 +12,9 @@ public:
     user();
     ~user();
     void addUserToDatabase();
+    int getacces();
+    QString getlogin();
+    QString getpass();
 };
 
 #endif // USER_H

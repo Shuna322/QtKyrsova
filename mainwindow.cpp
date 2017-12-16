@@ -14,21 +14,41 @@ MainWindow::MainWindow(QWidget *parent, QString _l, QString _p, class Widget *_p
     ui->setupUi(this);
     createUserObj();
     this->getdata();
-
+    int a = userobj.getacces();
+    switch (a) {
+    case 1:{
+        ui->pushButton_2->setEnabled(0); ui->action->setEnabled(0);
+        ui->pushButton_3->setEnabled(0); ui->action_2->setEnabled(0);
+        ui->pushButton_5->setEnabled(0);
+        ui->pushButton_6->setEnabled(0);
+        ui->pushButton_7->setEnabled(0); ui->action_3->setEnabled(0);
+        ui->comboBox->setEnabled(0);
+        break;
+    }
+    case 2: {
+        ui->pushButton_5->setEnabled(0);
+        ui->pushButton_7->setEnabled(0);
+        break;
+    }
+    case 3 : {
+        break;
+    }
+    default:
+        QCoreApplication::exit();
+    }
 }
 
 void MainWindow::getdata()
 {
     QSqlQuery query =  QSqlQuery(db.getdb());
     model= new QSqlQueryModel();
-    query.prepare("select `id`,`name`,`sname`,`tname`,`kurs`,`departament`,`group` from students");
+    query.prepare("select `id`,`name`,`sname`,`tname`,`departament`,`group` from students");
     query.exec();
     model->setQuery(query);
     ui->tableView->setModel(model);
     ui->comboBox->setModel(model);
     ui->comboBox->setModelColumn(0);
     ui->tableView->setColumnWidth(0,30);
-    ui->tableView->setColumnWidth(4,30);
 }
 
 MainWindow::~MainWindow()
@@ -87,9 +107,12 @@ void MainWindow::on_pushButton_3_clicked()
 
 void MainWindow::on_tableView_doubleClicked(const QModelIndex &index)
 {
-    QModelIndex x = QModelIndex(index.sibling(index.row(),0));
-    qDebug() << x.data().toInt();
-    openFormWithStudentInfo(x.data().toInt());
+    if (userobj.getacces() >= 2)
+    {
+        QModelIndex x = QModelIndex(index.sibling(index.row(),0));
+        qDebug() << x.data().toInt();
+        openFormWithStudentInfo(x.data().toInt());
+    }
 }
 
 
@@ -162,6 +185,6 @@ void MainWindow::createUserObj()
         phone_number = query.value(5).toString(); adress = query.value(6).toString();
         acces = query.value(7).toInt();
     }
-    userobj = user(name, sname, tname, sex, bday, phone_number, adress, acces);
+    userobj = user(name, sname, tname, sex, bday, phone_number, adress, acces, login, pass);
 
 }

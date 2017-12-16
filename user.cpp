@@ -37,3 +37,18 @@ void user::addUserToDatabase()
     else QMessageBox::information(0,"Повідомлення","Данні успішно додані !",QMessageBox::Ok);
 }
 
+int user::getacces()
+{
+    return type_of_acces;
+}
+
+QString user::getlogin()
+{
+    return login;
+}
+
+QString user::getpass()
+{
+    return pass;
+}
+
