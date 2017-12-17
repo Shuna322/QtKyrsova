@@ -3,6 +3,7 @@
 
 #include "mainwindow.h"
 #include "database.h"
+#include "adduserform.h"
 #include <QCryptographicHash>
 #include <QMessageBox>
 
@@ -31,10 +32,13 @@ private slots:
 
     void on_lineEdit_textChanged(const QString &arg1);
 
+    void on_pushButton_clicked();
+
 private:
     Ui::Widget *ui;
     database db;
     class MainWindow *form2;
+    class addUserForm *addUser;
 };
 
 #endif // WIDGET_H

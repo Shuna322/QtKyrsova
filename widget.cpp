@@ -64,3 +64,11 @@ void Widget::on_lineEdit_textChanged(const QString &arg1)
     else
         ui->loginbutton->setEnabled(0);
 }
+
+void Widget::on_pushButton_clicked()
+{
+    addUser = new addUserForm(0,0,this);
+    this->hide();
+    addUser->setFixedSize(addUser->size());
+    addUser->show();
+}
