@@ -43,3 +43,46 @@ void addStudentForm::on_pushButton_2_clicked()
     previousform->show();
     previousform->getdata();
 }
+
+void addStudentForm::on_lineEdit_textChanged(const QString &arg1)
+{
+    checkVariables();
+}
+
+void addStudentForm::on_lineEdit_2_textChanged(const QString &arg1)
+{
+    checkVariables();
+}
+
+void addStudentForm::on_lineEdit_3_textChanged(const QString &arg1)
+{
+    checkVariables();
+}
+
+void addStudentForm::on_lineEdit_7_textChanged(const QString &arg1)
+{
+    checkVariables();
+}
+
+void addStudentForm::on_lineEdit_8_textChanged(const QString &arg1)
+{
+    checkVariables();
+}
+
+void addStudentForm::on_lineEdit_4_textChanged(const QString &arg1)
+{
+    checkVariables();
+}
+
+void addStudentForm::on_lineEdit_5_textChanged(const QString &arg1)
+{
+    checkVariables();
+}
+
+void addStudentForm::checkVariables()
+{
+    if(ui->lineEdit_8->text() != "" && ui->lineEdit->text() != "" && ui->lineEdit_2->text() != "" && ui->lineEdit_3->text() != "" && ui->lineEdit_5->text() != "" && ui->lineEdit_7->text() != "" && ui->lineEdit_4->text() != "")
+        ui->pushButton_2->setEnabled(1);
+    else
+        ui->pushButton_2->setEnabled(0);
+}
