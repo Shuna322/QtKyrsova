@@ -170,8 +170,8 @@ void MainWindow::on_pushButton_5_clicked()
 
 void MainWindow::createUserObj()
 {
-    QSqlQuery query =  QSqlQuery(db.getdb());
-    query.exec("select name, sname, tname, sex, bday, phone_number, adress, type_of_acces from users where login='" + login + "' and  pass ='" + pass + "';");
+        QSqlQuery query =  QSqlQuery(db.getdb());
+        query.exec("select name, sname, tname, sex, bday, phone_number, adress, type_of_acces from users where login='" + login + "' and  pass ='" + pass + "';");
     int acces;
     QDate bday;
     bool sex;

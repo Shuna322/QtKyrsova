@@ -19,7 +19,7 @@
      <x>10</x>
      <y>10</y>
      <width>421</width>
-     <height>314</height>
+     <height>317</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout">
@@ -45,6 +45,9 @@
     </item>
     <item row="11" column="2">
      <widget class="QPushButton" name="pushButton_2">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
       <property name="text">
        <string>Прийняти</string>
       </property>
@@ -229,10 +232,10 @@
     <item row="1" column="1" colspan="2">
      <widget class="QLineEdit" name="lineEdit_4">
       <property name="inputMask">
-       <string>AAAAAAAAAAAAAAAAAAAA</string>
+       <string>ANNNNNNNNNNNNNNNNNNNNNNNN</string>
       </property>
       <property name="maxLength">
-       <number>20</number>
+       <number>25</number>
       </property>
      </widget>
     </item>
@@ -249,10 +252,20 @@
     <item row="2" column="1" colspan="2">
      <widget class="QLineEdit" name="lineEdit_5">
       <property name="inputMask">
-       <string>AAAAAAAAAAAAAAAAAAAA</string>
+       <string/>
       </property>
       <property name="maxLength">
-       <number>20</number>
+       <number>32767</number>
+      </property>
+      <property name="echoMode">
+       <enum>QLineEdit::Password</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="2">
+     <widget class="QLabel" name="label_11">
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
     </item>
