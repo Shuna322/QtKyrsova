@@ -5,8 +5,8 @@ student::student()
 
 }
 
-student::student(QString _name, QString _sname, QString _tname, bool _sex,  QDate _bday, QString _phone_number, QString _adress, bool _type_of_education, QString _group, QString _departament, int _kurs):
-    type_of_education(_type_of_education), group(_group), departament(_departament), kurs(_kurs), person( _name, _sname, _tname, _sex, _bday, _phone_number, _adress)
+student::student(QString _name, QString _sname, QString _tname, bool _sex,  QDate _bday, QString _phone_number, QString _adress, bool _type_of_education, int _speciality, int _departament, QDate _startEdu):
+    type_of_education(_type_of_education), speciality(_speciality), departament(_departament), startEdu(_startEdu), person( _name, _sname, _tname, _sex, _bday, _phone_number, _adress)
 {
 }
 
@@ -14,13 +14,13 @@ void student::addStudentToDB()
 {
     database db;
     QSqlQuery query =  QSqlQuery(db.getdb());
-    query.prepare("insert into students (`id`, `name`, `sname`, `tname`, `sex`, `group`, `departament`,  `bday`, `phone_number`, `adress`, `type_of_education`, `kurs`)"
-               "values (NULL,:name,:sname,:tname,:sex,:group,:departament,:birth_day,:phone_number,:adress,:type_of_education,:kurs)");
+    query.prepare("insert into students (`id`, `name`, `sname`, `tname`, `sex`, `speciality`, `departament`,  `bday`, `phone_number`, `adress`, `type_of_education`, `startEdu`)"
+               "values (NULL,:name,:sname,:tname,:sex,:speciality,:departament,:birth_day,:phone_number,:adress,:type_of_education,:startEdu)");
     query.bindValue(":name",name);
     query.bindValue(":sname",sname);
     query.bindValue(":tname",tname);
     query.bindValue(":sex",sex);
-    query.bindValue(":group",group);
+    query.bindValue(":speciality",speciality);
     query.bindValue(":departament",departament);
     query.bindValue(":group",group);
     query.bindValue(":departament",departament);
@@ -28,7 +28,7 @@ void student::addStudentToDB()
     query.bindValue(":phone_number",phone_number);
     query.bindValue(":adress",adress);
     query.bindValue(":type_of_education",type_of_education);
-    query.bindValue(":kurs",kurs);
+    query.bindValue(":startEdu",startEdu);
 
     if(!query.exec())
         qDebug() << query.lastError() << query.lastQuery();
@@ -38,17 +38,15 @@ void student::addStudentToDB()
 void student::replaceStudentInDB(int id)
 {
     database db;
-   // db.connect();
-    qDebug () << id;
     QSqlQuery query =  QSqlQuery(db.getdb());
-    query.prepare("replace into students (`id`, `name`, `sname`, `tname`, `sex`, `group`, `departament`,  `bday`, `phone_number`, `adress`, `type_of_education`, `kurs`)"
-               "values (:id,:name,:sname,:tname,:sex,:group,:departament,:birth_day,:phone_number,:adress,:type_of_education,:kurs)");
+    query.prepare("replace into students (`id`, `name`, `sname`, `tname`, `sex`, `speciality`, `departament`,  `bday`, `phone_number`, `adress`, `type_of_education`, `startEdu`)"
+               "values (:id,:name,:sname,:tname,:sex,:speciality,:departament,:birth_day,:phone_number,:adress,:type_of_education,:startEdu)");
     query.bindValue(":id",id);
     query.bindValue(":name",name);
     query.bindValue(":sname",sname);
     query.bindValue(":tname",tname);
     query.bindValue(":sex",sex);
-    query.bindValue(":group",group);
+    query.bindValue(":speciality",speciality);
     query.bindValue(":departament",departament);
     query.bindValue(":group",group);
     query.bindValue(":departament",departament);
@@ -56,7 +54,7 @@ void student::replaceStudentInDB(int id)
     query.bindValue(":phone_number",phone_number);
     query.bindValue(":adress",adress);
     query.bindValue(":type_of_education",type_of_education);
-    query.bindValue(":kurs",kurs);
+    query.bindValue(":startEdu",startEdu);
     if(!query.exec())
         qDebug() << query.lastError() << "\n" << query.lastQuery();
     else {
@@ -77,14 +75,13 @@ void student::getdataFromDB(int id)
        sname = query.value(2).toString();
        tname = query.value(3).toString();
        sex = query.value(4).toBool();
-       group = query.value(5).toString();
-       departament = query.value(6).toString();
+       speciality = query.value(5).toInt();
+       departament = query.value(6).toInt();
        bday = query.value(7).toDate();
        phone_number = query.value(8).toString(); adress = query.value(9).toString();
        type_of_education = query.value(10).toInt();
-       kurs = query.value(11).toInt();
+       startEdu = query.value(11).toDate();
    }
-   qDebug() << name << sname << type_of_education << kurs << query.lastQuery();
 }
 
 bool student::gettype_of_education()
@@ -92,9 +89,14 @@ bool student::gettype_of_education()
     return type_of_education;
 }
 
-QString student::getgroup()
+QDate student::getstartEdu()
 {
-    return group;
+    return startEdu;
+}
+
+QString student::getspeciality()
+{
+    return speciality;
 }
 
 QString student::getdepartament()
@@ -102,7 +104,3 @@ QString student::getdepartament()
     return departament;
 }
 
-QString student::getkurs()
-{
-    return (QString::number(kurs));
-}

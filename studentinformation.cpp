@@ -10,6 +10,9 @@
         QVariant day = st.getbday().day();
         QVariant month = st.getbday().month();
         QVariant year = st.getbday().year();
+        QVariant sday = st.getstartEdu().day();
+        QVariant smonth = st.getstartEdu().month();
+        QVariant syear = st.getstartEdu().year();
         ui->label_14->setText(st.getname());
         ui->label_15->setText(st.getsname());
         ui->label_16->setText(st.gettname());

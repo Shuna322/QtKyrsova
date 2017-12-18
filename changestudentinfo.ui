@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>545</width>
-    <height>382</height>
+    <width>546</width>
+    <height>408</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,27 +20,48 @@
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>10</y>
+     <x>0</x>
+     <y>0</y>
      <width>531</width>
-     <height>366</height>
+     <height>401</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout">
-    <item row="12" column="2">
+    <item row="10" column="1" colspan="2">
+     <widget class="QComboBox" name="comboBox_5">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="13" column="2">
      <widget class="QPushButton" name="pushButton_2">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
       <property name="text">
        <string>Прийняти</string>
       </property>
      </widget>
     </item>
-    <item row="1" column="0">
-     <widget class="QLabel" name="label">
-      <property name="layoutDirection">
-       <enum>Qt::RightToLeft</enum>
+    <item row="2" column="1" colspan="2">
+     <widget class="QLineEdit" name="lineEdit_2">
+      <property name="inputMask">
+       <string>AAAAAAAAAAAAAAAAAAAAAAAAA</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0" colspan="2">
+     <widget class="QLabel" name="label_10">
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
       </property>
       <property name="text">
-       <string>Ім'я</string>
+       <string>Відредагуйте інформацю про студента</string>
       </property>
      </widget>
     </item>
@@ -54,8 +75,18 @@
       </property>
      </widget>
     </item>
-    <item row="2" column="1" colspan="2">
-     <widget class="QLineEdit" name="lineEdit_2">
+    <item row="1" column="0">
+     <widget class="QLabel" name="label">
+      <property name="layoutDirection">
+       <enum>Qt::RightToLeft</enum>
+      </property>
+      <property name="text">
+       <string>Ім'я</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1" colspan="2">
+     <widget class="QLineEdit" name="lineEdit_3">
       <property name="inputMask">
        <string>AAAAAAAAAAAAAAAAAAAAAAAAA</string>
       </property>
@@ -68,33 +99,6 @@
       </property>
       <property name="text">
        <string>Побатькові</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="0">
-     <widget class="QLabel" name="label_2">
-      <property name="layoutDirection">
-       <enum>Qt::RightToLeft</enum>
-      </property>
-      <property name="text">
-       <string>Прізвище</string>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="1" colspan="2">
-     <widget class="QLineEdit" name="lineEdit_3">
-      <property name="inputMask">
-       <string>AAAAAAAAAAAAAAAAAAAAAAAAA</string>
-      </property>
-     </widget>
-    </item>
-    <item row="5" column="0">
-     <widget class="QLabel" name="label_6">
-      <property name="layoutDirection">
-       <enum>Qt::RightToLeft</enum>
-      </property>
-      <property name="text">
-       <string>Дата народження</string>
       </property>
      </widget>
     </item>
@@ -124,13 +128,23 @@
       </item>
      </widget>
     </item>
-    <item row="4" column="0">
-     <widget class="QLabel" name="label_4">
+    <item row="2" column="0">
+     <widget class="QLabel" name="label_2">
       <property name="layoutDirection">
        <enum>Qt::RightToLeft</enum>
       </property>
       <property name="text">
-       <string>Стать</string>
+       <string>Прізвище</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="0">
+     <widget class="QLabel" name="label_6">
+      <property name="layoutDirection">
+       <enum>Qt::RightToLeft</enum>
+      </property>
+      <property name="text">
+       <string>Дата народження</string>
       </property>
      </widget>
     </item>
@@ -144,8 +158,15 @@
       </property>
      </widget>
     </item>
-    <item row="5" column="1" colspan="2">
-     <widget class="QDateEdit" name="dateEdit"/>
+    <item row="4" column="0">
+     <widget class="QLabel" name="label_4">
+      <property name="layoutDirection">
+       <enum>Qt::RightToLeft</enum>
+      </property>
+      <property name="text">
+       <string>Стать</string>
+      </property>
+     </widget>
     </item>
     <item row="6" column="1" colspan="2">
      <widget class="QLineEdit" name="lineEdit_7">
@@ -157,6 +178,9 @@
       </property>
      </widget>
     </item>
+    <item row="5" column="1" colspan="2">
+     <widget class="QDateEdit" name="dateEdit"/>
+    </item>
     <item row="7" column="0">
      <widget class="QLabel" name="label_8">
       <property name="layoutDirection">
@@ -164,26 +188,6 @@
       </property>
       <property name="text">
        <string>Адреса проживання</string>
-      </property>
-     </widget>
-    </item>
-    <item row="7" column="1" colspan="2">
-     <widget class="QLineEdit" name="lineEdit_8"/>
-    </item>
-    <item row="8" column="0">
-     <widget class="QLabel" name="label_9">
-      <property name="layoutDirection">
-       <enum>Qt::RightToLeft</enum>
-      </property>
-      <property name="text">
-       <string>Форма навчання</string>
-      </property>
-     </widget>
-    </item>
-    <item row="9" column="1" colspan="2">
-     <widget class="QLineEdit" name="lineEdit_4">
-      <property name="inputMask">
-       <string>AAAAAAAAAAAAAAAAAAAAAAAAA</string>
       </property>
      </widget>
     </item>
@@ -201,13 +205,33 @@
       </item>
      </widget>
     </item>
-    <item row="9" column="0">
-     <widget class="QLabel" name="label_11">
+    <item row="8" column="0">
+     <widget class="QLabel" name="label_9">
       <property name="layoutDirection">
        <enum>Qt::RightToLeft</enum>
       </property>
       <property name="text">
-       <string>Факультет</string>
+       <string>Форма навчання</string>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="1" colspan="2">
+     <widget class="QLineEdit" name="lineEdit_8"/>
+    </item>
+    <item row="10" column="0">
+     <widget class="QLabel" name="label_12">
+      <property name="layoutDirection">
+       <enum>Qt::RightToLeft</enum>
+      </property>
+      <property name="text">
+       <string>Спеціальність</string>
+      </property>
+     </widget>
+    </item>
+    <item row="13" column="0">
+     <widget class="QPushButton" name="pushButton">
+      <property name="text">
+       <string>Назад</string>
       </property>
      </widget>
     </item>
@@ -230,27 +254,13 @@
       </item>
      </widget>
     </item>
-    <item row="10" column="0">
-     <widget class="QLabel" name="label_12">
+    <item row="9" column="0">
+     <widget class="QLabel" name="label_11">
       <property name="layoutDirection">
        <enum>Qt::RightToLeft</enum>
       </property>
       <property name="text">
-       <string>Група</string>
-      </property>
-     </widget>
-    </item>
-    <item row="12" column="0">
-     <widget class="QPushButton" name="pushButton">
-      <property name="text">
-       <string>Назад</string>
-      </property>
-     </widget>
-    </item>
-    <item row="10" column="1" colspan="2">
-     <widget class="QLineEdit" name="lineEdit_5">
-      <property name="inputMask">
-       <string>AAAAAAAAAAAAAAAAAAAAAAAAA</string>
+       <string>Факультет</string>
       </property>
      </widget>
     </item>
@@ -264,19 +274,44 @@
       </property>
      </widget>
     </item>
-    <item row="0" column="0" colspan="3">
-     <widget class="QLabel" name="label_10">
-      <property name="font">
-       <font>
-        <pointsize>14</pointsize>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
-      </property>
+    <item row="9" column="1" colspan="2">
+     <widget class="QComboBox" name="comboBox_4">
+      <item>
+       <property name="text">
+        <string>Інформаційних технологій, менеджменту та туризму</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Транспорту та інженерної механіки</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Електронних апаратів</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Професійної підготовки</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>International Students Department</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item row="12" column="0">
+     <widget class="QLabel" name="label_5">
       <property name="text">
-       <string>Відредагуйте інформацю про студента</string>
+       <string>Дата початку навчання</string>
       </property>
      </widget>
+    </item>
+    <item row="12" column="1" colspan="2">
+     <widget class="QDateEdit" name="dateEdit_2"/>
     </item>
    </layout>
   </widget>
