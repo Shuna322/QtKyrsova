@@ -6,6 +6,7 @@ addStudentForm::addStudentForm(QWidget *parent,class MainWindow *_previousform) 
     ui(new Ui::addStudentForm)
 {
     ui->setupUi(this);
+    ui->dateEdit->setMaximumDate(QDate::currentDate());
 }
 
 addStudentForm::~addStudentForm()

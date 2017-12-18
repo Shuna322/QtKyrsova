@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>Форма редагування інформації про студента</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../../Desktop/Icojam-Blue-Bits-Database-search.ico</normaloff>../../Desktop/Icojam-Blue-Bits-Database-search.ico</iconset>
+  </property>
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>

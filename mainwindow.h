@@ -51,6 +51,8 @@ private slots:
 
     void createUserObj();
 
+    void on_tableView_clicked(const QModelIndex &index);
+
 private:
     Ui::MainWindow *ui;
     QString login, pass;
@@ -61,7 +63,7 @@ private:
     class addUserForm *addUser;
     QSqlQueryModel *model;
     user userobj;
-
+    int curentID;
 };
 
 #endif // MAINWINDOW_H

@@ -63,7 +63,7 @@ void MainWindow::on_pushButton_clicked()
     reply = QMessageBox::question(this, "Увага","Ви дійсно хочете вийти з програми ?",
                                   QMessageBox::Yes|QMessageBox::No);
     if (reply == QMessageBox::Yes)
-    QCoreApplication::exit();
+        QCoreApplication::exit();
 }
 
 
@@ -83,9 +83,9 @@ void MainWindow::on_pushButton_4_clicked()
     reply = QMessageBox::question(this, "Увага","Ви дійсно хочете змінити користувача ?",
                                   QMessageBox::Yes|QMessageBox::No);
     if (reply == QMessageBox::Yes){
-    this->hide();
-    prev->show();
-    prev->clearLines();
+        this->hide();
+        prev->show();
+        prev->clearLines();
     }
 }
 
@@ -115,10 +115,9 @@ void MainWindow::on_tableView_doubleClicked(const QModelIndex &index)
     }
 }
 
-
 void MainWindow::on_action_triggered()
 {
-     on_pushButton_2_clicked();
+    on_pushButton_2_clicked();
 }
 
 void MainWindow::on_action_2_triggered()
@@ -133,8 +132,8 @@ void MainWindow::on_action_3_triggered()
 
 void MainWindow::on_pushButton_8_clicked()
 {
-QDesktopServices::openUrl(QUrl("https://i.imgur.com/xGZuM7V.png", QUrl::TolerantMode));
-QMessageBox::information(0,"Не скучайте","На досузі можете порозгадувати",QMessageBox::Ok);
+    QDesktopServices::openUrl(QUrl("https://i.imgur.com/xGZuM7V.png", QUrl::TolerantMode));
+    QMessageBox::information(0,"Не скучайте","На досузі можете порозгадувати",QMessageBox::Ok);
 }
 
 void MainWindow::on_pushButton_6_clicked()
@@ -170,8 +169,8 @@ void MainWindow::on_pushButton_5_clicked()
 
 void MainWindow::createUserObj()
 {
-        QSqlQuery query =  QSqlQuery(db.getdb());
-        query.exec("select name, sname, tname, sex, bday, phone_number, adress, type_of_acces from users where login='" + login + "' and  pass ='" + pass + "';");
+    QSqlQuery query =  QSqlQuery(db.getdb());
+    query.exec("select name, sname, tname, sex, bday, phone_number, adress, type_of_acces from users where login='" + login + "' and  pass ='" + pass + "';");
     int acces;
     QDate bday;
     bool sex;
@@ -187,4 +186,10 @@ void MainWindow::createUserObj()
     }
     userobj = user(name, sname, tname, sex, bday, phone_number, adress, acces, login, pass);
 
+}
+
+void MainWindow::on_tableView_clicked(const QModelIndex &index)
+{
+    if (userobj.getacces() >= 2)
+        ui->comboBox->setCurrentIndex(index.row());
 }
