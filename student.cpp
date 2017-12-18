@@ -8,7 +8,6 @@ student::student()
 student::student(QString _name, QString _sname, QString _tname, bool _sex,  QDate _bday, QString _phone_number, QString _adress, bool _type_of_education, int _group, QDate _startEdu):
     type_of_education(_type_of_education), group(_group) , startEdu(_startEdu), person( _name, _sname, _tname, _sex, _bday, _phone_number, _adress)
 {
-        query = new QSqlQuery(db.getdb());
 }
 
 void student::addStudentToDB()
@@ -92,7 +91,10 @@ QDate student::getstartEdu()
 
 QString student::getGroupName()
 {
+    QSqlQuery *query;
+    database db;
     QString temp;
+    query = new QSqlQuery(db.getdb());
     query->prepare("select `name` from groups where `id` = :id");
     query->bindValue(":id",group);
     query->exec();
@@ -102,7 +104,10 @@ QString student::getGroupName()
 
 QString student::getDepartamentName()
 {
+    QSqlQuery *query;
+    database db;
     QString temp;
+    query = new QSqlQuery(db.getdb());
     query->prepare("select departaments.name from departaments,groups where groups.id = :id and departaments.id = groups.departament_code");
     query->bindValue(":id",group);
     query->exec();
@@ -112,8 +117,10 @@ QString student::getDepartamentName()
 
 QString student::getGroupCode()
 {
+    QSqlQuery *query;
+    database db;
     QString temp;
-
+    query = new QSqlQuery(db.getdb());
     query->prepare("select `code` from groups where `id` = :id");
     query->bindValue(":id",group);
     query->exec();

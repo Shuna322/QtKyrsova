@@ -105,6 +105,7 @@ void addStudentForm::on_comboBox_5_currentTextChanged(const QString &arg1)
 int addStudentForm::getGroupID()
 {
     int temp;
+    query = new QSqlQuery(db.getdb());
     query->prepare("select `id` from groups where code = '"+ui->comboBox_6->currentText()+"';");
     query->exec();
     while(query->next()) temp = query->value(0).toInt();
@@ -113,7 +114,6 @@ int addStudentForm::getGroupID()
 
 void addStudentForm::loadDepartamentFromDB()
 {
-    query = new QSqlQuery(db.getdb());
     query->prepare("select `name` from `departaments`");
     query->exec();
     model->setQuery(*query);

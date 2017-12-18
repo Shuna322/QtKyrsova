@@ -21,11 +21,15 @@ private slots:
 
     void on_pushButton_2_clicked();
 
+    int  getGroupID();
+
 private:
     Ui::changeStudentInfo *ui;
     class MainWindow *previousform;
     student st;
     int studentID;
+    QSqlQuery *query;
+    database db;
 
 };
 

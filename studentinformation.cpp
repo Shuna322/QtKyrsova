@@ -6,6 +6,7 @@
         ui(new Ui::studentInformation)
     {
         ui->setupUi(this);
+        qDebug () << "before adding info to obj";
         st.getdataFromDB(id);
         QVariant day = st.getbday().day();
         QVariant month = st.getbday().month();
@@ -27,6 +28,7 @@
         if(st.gettype_of_education())
             ui->label_22->setText("Державна");
         else ui->label_22->setText("Платна");
+        qDebug () << "before exec";
         ui->label_23->setText(st.getDepartamentName());
         ui->label_24->setText(st.getGroupName());
         ui->label_31->setText(st.getGroupCode());

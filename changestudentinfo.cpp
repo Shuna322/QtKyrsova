@@ -15,9 +15,9 @@ changeStudentInfo::changeStudentInfo(QWidget *parent, class MainWindow *_previou
     ui->lineEdit_7->setText(st.getphone_number());
     ui->lineEdit_8->setText(st.getadress());
     ui->comboBox_2->setCurrentIndex(st.gettype_of_education());
-  /*  ui->comboBox_4->setCurrentIndex(st.getdepartament()-1);
-    ui->comboBox_5->setCurrentIndex(st.getspeciality()-1);
-    ui->comboBox_3->setCurrentIndex(st.getkurs().toInt()-1); */
+    ui->comboBox_4->setCurrentText(st.getDepartamentName());
+    ui->comboBox_5->setCurrentText(st.getGroupName());
+    ui->comboBox_6->setCurrentText(st.getGroupCode());
     ui->dateEdit_2->setDate(st.getstartEdu());
 }
 
@@ -43,6 +43,7 @@ void changeStudentInfo::on_pushButton_2_clicked()
     tname = ui->lineEdit_3->text();
     sex =(bool) ui->comboBox->currentIndex();
     bday = ui->dateEdit->date();
+    group = getGroupID();
     phone_number = ui->lineEdit_7->text();
     adress = ui->lineEdit_8->text();
     type_of_education = (bool)ui->comboBox_2->currentIndex();
@@ -52,4 +53,14 @@ void changeStudentInfo::on_pushButton_2_clicked()
     this->hide();
     previousform->show();
     previousform->getdata();
+}
+
+int changeStudentInfo::getGroupID()
+{
+    int temp;
+    query = new QSqlQuery(db.getdb());
+    query->prepare("select `id` from groups where code = '"+ui->comboBox_6->currentText()+"';");
+    query->exec();
+    while(query->next()) temp = query->value(0).toInt();
+    return temp;
 }
