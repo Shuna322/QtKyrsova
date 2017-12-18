@@ -35,9 +35,8 @@ private slots:
 
     void on_lineEdit_8_textChanged(const QString &arg1);
 
-    void on_lineEdit_4_textChanged(const QString &arg1);
 
-    void on_lineEdit_5_textChanged(const QString &arg1);
+    void on_comboBox_4_currentIndexChanged(int index);
 
 private:
     Ui::addStudentForm *ui;

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>545</width>
+    <width>550</width>
     <height>382</height>
    </rect>
   </property>
@@ -197,13 +197,6 @@
       </property>
      </widget>
     </item>
-    <item row="9" column="1" colspan="2">
-     <widget class="QLineEdit" name="lineEdit_4">
-      <property name="inputMask">
-       <string>AAAAAAAAAAAAAAAAAAAAAAAAA</string>
-      </property>
-     </widget>
-    </item>
     <item row="8" column="1" colspan="2">
      <widget class="QComboBox" name="comboBox_2">
       <item>
@@ -264,13 +257,6 @@
       </property>
      </widget>
     </item>
-    <item row="10" column="1" colspan="2">
-     <widget class="QLineEdit" name="lineEdit_5">
-      <property name="inputMask">
-       <string>AAAAAAAAAAAAAAAAAAAAAAAAA</string>
-      </property>
-     </widget>
-    </item>
     <item row="11" column="0">
      <widget class="QLabel" name="label_13">
       <property name="layoutDirection">
@@ -279,6 +265,42 @@
       <property name="text">
        <string>Курс зарахування</string>
       </property>
+     </widget>
+    </item>
+    <item row="10" column="1" colspan="2">
+     <widget class="QComboBox" name="comboBox_5">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="1" colspan="2">
+     <widget class="QComboBox" name="comboBox_4">
+      <item>
+       <property name="text">
+        <string>Інформаційних технологій, менеджменту та туризму</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Транспорту та інженерної механіки</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Електронних апаратів</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Професійної підготовки</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>International Students Department</string>
+       </property>
+      </item>
      </widget>
     </item>
    </layout>
@@ -293,8 +315,6 @@
   <tabstop>lineEdit_7</tabstop>
   <tabstop>lineEdit_8</tabstop>
   <tabstop>comboBox_2</tabstop>
-  <tabstop>lineEdit_4</tabstop>
-  <tabstop>lineEdit_5</tabstop>
   <tabstop>comboBox_3</tabstop>
   <tabstop>pushButton_2</tabstop>
   <tabstop>pushButton</tabstop>
