@@ -35,12 +35,20 @@ private slots:
 
     void on_lineEdit_8_textChanged(const QString &arg1);
 
-
     void on_comboBox_4_currentIndexChanged(int index);
+
+    int getGroupID();
+
+    void loadDepartamentFromDB();
+
+    void on_comboBox_5_currentTextChanged(const QString &arg1);
 
 private:
     Ui::addStudentForm *ui;
     class MainWindow *previousform;
+    QSqlQuery *query;
+    QSqlQueryModel *model;
+    database db;
 };
 
 #endif // ADDSTUDENTFORM_H

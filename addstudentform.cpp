@@ -7,7 +7,8 @@ addStudentForm::addStudentForm(QWidget *parent,class MainWindow *_previousform) 
 {
     ui->setupUi(this);
     ui->dateEdit->setMaximumDate(QDate::currentDate());
-    on_comboBox_4_currentIndexChanged(0);
+    on_comboBox_4_currentIndexChanged(0);   //потрібно загрузити хренатень з БД
+    loadDepartamentFromDB();
 }
 
 addStudentForm::~addStudentForm()
@@ -24,7 +25,7 @@ void addStudentForm::on_pushButton_clicked()
 void addStudentForm::on_pushButton_2_clicked()
 {
     QString name, sname, tname, phone_number, adress;
-    int departament, speciality;
+    int group;
     QDate bday, startEdu;
     bool sex, type_of_education;
     name =ui->lineEdit->text();
@@ -32,14 +33,12 @@ void addStudentForm::on_pushButton_2_clicked()
     tname = ui->lineEdit_3->text();
     sex =(bool) ui->comboBox->currentIndex();
     bday = ui->dateEdit->date();
-    departament =ui->comboBox_4->currentIndex()+1;
-    speciality = ui->comboBox_5->currentIndex()+1;
+    group = getGroupID();
     phone_number = ui->lineEdit_7->text();
     adress = ui->lineEdit_8->text();
     type_of_education = (bool)ui->comboBox_2->currentIndex();
     startEdu = ui->dateEdit_2->date();
-    qDebug() << sex << type_of_education;
-    student st(name,sname,tname,sex,bday,phone_number,adress,type_of_education,speciality,departament,startEdu);
+    student st(name,sname,tname,sex,bday,phone_number,adress,type_of_education,group,startEdu);
     st.addStudentToDB();
     this->hide();
     previousform->show();
@@ -81,61 +80,43 @@ void addStudentForm::checkVariables()
 
 void addStudentForm::on_comboBox_4_currentIndexChanged(int index)
 {
-    switch (index) {
-    case 0:
-    {
-        ui->comboBox_5->setEnabled(1);
-        ui->comboBox_5->clear();
-        ui->comboBox_5->addItem("Туризм");
-        ui->comboBox_5->addItem("Менеджмент і адміністрування");
-        ui->comboBox_5->addItem("Комп'ютерна інженерія");
-        break;
-    }
-    case 1:
-    {
-        ui->comboBox_5->setEnabled(1);
-        ui->comboBox_5->clear();
-        ui->comboBox_5->addItem("Галузеве машинобудування");
-        ui->comboBox_5->addItem("Менеджмент");
-        ui->comboBox_5->addItem("Автомобільний транспорт");
-        ui->comboBox_5->addItem("Транспортні технології");
-        ui->comboBox_5->addItem("Автомобільний транспорт (бакалавр)");
-        break;
-    }
-    case 2:
-    {
-        ui->comboBox_5->setEnabled(1);
-        ui->comboBox_5->clear();
-        ui->comboBox_5->addItem("Телекомунікації та радіотехніка");
-        ui->comboBox_5->addItem("Комп’ютерні науки та інформаційні технології");
-        ui->comboBox_5->addItem("Комп'ютерна інженерія");
-        break;
-    }
-    case 3:
-    {
-        ui->comboBox_5->setEnabled(1);
-        ui->comboBox_5->clear();
-        ui->comboBox_5->addItem("Соціальний робітник; Гувернер");
-        ui->comboBox_5->addItem("Агент з організації туризму; Екскурсовод");
-        break;
-    }
-    case 4:
-    {
-        ui->comboBox_5->setEnabled(1);
-        ui->comboBox_5->clear();
-        ui->comboBox_5->addItem("Computer Systems and Networks (Bachelor)");
-        ui->comboBox_5->addItem("Radio Engineering (Bachelor)");
-        ui->comboBox_5->addItem("Automobile Transport (Bachelor)");
-        ui->comboBox_5->addItem("Travel Service (Junior specialist)");
-        ui->comboBox_5->addItem("Organisation of Transportation and Automobile Control (juniour specialist)");
-        ui->comboBox_5->addItem("Maintenance and repair of automobiles and engines (Junior Specialist)");
-        ui->comboBox_5->addItem("Design, manufacture and maintenance of wireless devices (Junior Specialist)");
-        ui->comboBox_5->addItem("Material processing on the machines and automatic lines (Junior Specialist)");
-        ui->comboBox_5->addItem("Organization of Production (Junior Specialist)");
-        ui->comboBox_5->addItem("Maintenance of computer systems and networks (Junior Specialist)");
-        break;
-    }
-    default:
-        break;
-    }
+    query = new QSqlQuery(db.getdb());
+    model= new QSqlQueryModel();
+    query->prepare("select distinct `name` from groups where `departament_code` = :index");
+    query->bindValue(":index",index+1);
+    query->exec();
+    model->setQuery(*query);
+    ui->comboBox_5->setModel(model);
+    ui->comboBox_5->setModelColumn(0);
+}
+
+void addStudentForm::on_comboBox_5_currentTextChanged(const QString &arg1)
+{
+    query = new QSqlQuery(db.getdb());
+    model= new QSqlQueryModel();
+    query->prepare("select distinct `code` from groups where `name` = :name");
+    query->bindValue(":name",arg1);
+    query->exec();
+    model->setQuery(*query);
+    ui->comboBox_6->setModel(model);
+    ui->comboBox_6->setModelColumn(0);
+}
+
+int addStudentForm::getGroupID()
+{
+    int temp;
+    query->prepare("select `id` from groups where code = '"+ui->comboBox_6->currentText()+"';");
+    query->exec();
+    while(query->next()) temp = query->value(0).toInt();
+    return temp;
+}
+
+void addStudentForm::loadDepartamentFromDB()
+{
+    query = new QSqlQuery(db.getdb());
+    query->prepare("select `name` from `departaments`");
+    query->exec();
+    model->setQuery(*query);
+    ui->comboBox_4->setModel(model);
+    ui->comboBox_4->setModelColumn(0);
 }

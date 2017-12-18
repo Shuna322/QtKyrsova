@@ -18,62 +18,27 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>../../Desktop/Icojam-Blue-Bits-Database-search.ico</normaloff>../../Desktop/Icojam-Blue-Bits-Database-search.ico</iconset>
+    <normaloff>../Desktop/Icojam-Blue-Bits-Database-search.ico</normaloff>../Desktop/Icojam-Blue-Bits-Database-search.ico</iconset>
   </property>
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>10</x>
      <y>10</y>
-     <width>331</width>
+     <width>341</width>
      <height>431</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout">
-    <item row="8" column="1" colspan="2">
-     <widget class="QLabel" name="label_21">
+    <item row="11" column="1" colspan="2">
+     <widget class="QLabel" name="label_24">
       <property name="text">
        <string/>
       </property>
      </widget>
     </item>
-    <item row="7" column="1" colspan="2">
-     <widget class="QLabel" name="label_20">
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-    </item>
-    <item row="10" column="1" colspan="2">
-     <widget class="QLabel" name="label_23">
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="0" colspan="2">
-     <widget class="QLabel" name="label_10">
-      <property name="font">
-       <font>
-        <pointsize>14</pointsize>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="text">
-       <string>Інформація про студента:</string>
-      </property>
-     </widget>
-    </item>
-    <item row="13" column="1" colspan="2">
-     <widget class="QLabel" name="label_25">
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-    </item>
-    <item row="6" column="1" colspan="2">
-     <widget class="QLabel" name="label_19">
+    <item row="1" column="1" colspan="2">
+     <widget class="QLabel" name="label_14">
       <property name="text">
        <string/>
       </property>
@@ -93,17 +58,19 @@
       </property>
      </widget>
     </item>
-    <item row="11" column="1" colspan="2">
-     <widget class="QLabel" name="label_24">
-      <property name="text">
-       <string/>
+    <item row="1" column="0">
+     <widget class="QLabel" name="label">
+      <property name="font">
+       <font>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
       </property>
-     </widget>
-    </item>
-    <item row="1" column="1" colspan="2">
-     <widget class="QLabel" name="label_14">
+      <property name="layoutDirection">
+       <enum>Qt::RightToLeft</enum>
+      </property>
       <property name="text">
-       <string/>
+       <string>Ім'я</string>
       </property>
      </widget>
     </item>
@@ -128,8 +95,8 @@
       </property>
      </widget>
     </item>
-    <item row="1" column="0">
-     <widget class="QLabel" name="label">
+    <item row="2" column="0">
+     <widget class="QLabel" name="label_2">
       <property name="font">
        <font>
         <weight>75</weight>
@@ -140,7 +107,7 @@
        <enum>Qt::RightToLeft</enum>
       </property>
       <property name="text">
-       <string>Ім'я</string>
+       <string>Прізвище</string>
       </property>
      </widget>
     </item>
@@ -157,22 +124,6 @@
       </property>
       <property name="text">
        <string>Побатькові</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="0">
-     <widget class="QLabel" name="label_2">
-      <property name="font">
-       <font>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="layoutDirection">
-       <enum>Qt::RightToLeft</enum>
-      </property>
-      <property name="text">
-       <string>Прізвище</string>
       </property>
      </widget>
     </item>
@@ -208,22 +159,6 @@
       </property>
      </widget>
     </item>
-    <item row="10" column="0">
-     <widget class="QLabel" name="label_11">
-      <property name="font">
-       <font>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="layoutDirection">
-       <enum>Qt::RightToLeft</enum>
-      </property>
-      <property name="text">
-       <string>Факультет</string>
-      </property>
-     </widget>
-    </item>
     <item row="6" column="0">
      <widget class="QLabel" name="label_6">
       <property name="font">
@@ -256,8 +191,8 @@
       </property>
      </widget>
     </item>
-    <item row="7" column="0">
-     <widget class="QLabel" name="label_7">
+    <item row="10" column="0">
+     <widget class="QLabel" name="label_11">
       <property name="font">
        <font>
         <weight>75</weight>
@@ -268,7 +203,7 @@
        <enum>Qt::RightToLeft</enum>
       </property>
       <property name="text">
-       <string>Номер телефону</string>
+       <string>Факультет</string>
       </property>
      </widget>
     </item>
@@ -304,8 +239,8 @@
       </property>
      </widget>
     </item>
-    <item row="13" column="0">
-     <widget class="QLabel" name="label_13">
+    <item row="7" column="0">
+     <widget class="QLabel" name="label_7">
       <property name="font">
        <font>
         <weight>75</weight>
@@ -316,33 +251,19 @@
        <enum>Qt::RightToLeft</enum>
       </property>
       <property name="text">
-       <string>Курс зарахування</string>
+       <string>Номер телефону</string>
       </property>
      </widget>
     </item>
-    <item row="14" column="0">
+    <item row="13" column="0">
      <widget class="QLabel" name="label_26">
       <property name="text">
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Дата початку навчання&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
     </item>
-    <item row="14" column="1" colspan="2">
+    <item row="13" column="1" colspan="2">
      <widget class="QLabel" name="label_27">
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-    </item>
-    <item row="15" column="0">
-     <widget class="QLabel" name="label_28">
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Курс&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-    </item>
-    <item row="15" column="1" colspan="2">
-     <widget class="QLabel" name="label_29">
       <property name="text">
        <string/>
       </property>
@@ -357,6 +278,48 @@
     </item>
     <item row="12" column="1" colspan="2">
      <widget class="QLabel" name="label_31">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="1" colspan="2">
+     <widget class="QLabel" name="label_21">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="1" colspan="2">
+     <widget class="QLabel" name="label_20">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0" colspan="2">
+     <widget class="QLabel" name="label_10">
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Інформація про студента:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="10" column="1" colspan="2">
+     <widget class="QLabel" name="label_23">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="1" colspan="2">
+     <widget class="QLabel" name="label_19">
       <property name="text">
        <string/>
       </property>

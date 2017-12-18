@@ -20,7 +20,6 @@
             ui->label_17->setText("Ж");
         else
             ui->label_17->setText("Ч");
-       // countAge(st.getbday()).toString();
         ui->label_18->setText(countAge(st.getbday()));
         ui->label_19->setText(((((day.toString()+"/")+month.toString())+"/")+year.toString()));
         ui->label_20->setText(st.getphone_number());
@@ -28,9 +27,11 @@
         if(st.gettype_of_education())
             ui->label_22->setText("Державна");
         else ui->label_22->setText("Платна");
-        ui->label_23->setText(st.getdepartament());
-        ui->label_24->setText(st.getgroup());
-        ui->label_25->setText(st.getkurs());
+        ui->label_23->setText(st.getDepartamentName());
+        ui->label_24->setText(st.getGroupName());
+        ui->label_31->setText(st.getGroupCode());
+        ui->label_27->setText(((((sday.toString()+"/")+smonth.toString())+"/")+syear.toString()));
+
     }
 
     QString studentInformation::countAge(QDate _bday)

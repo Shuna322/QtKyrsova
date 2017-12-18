@@ -42,7 +42,7 @@ void MainWindow::getdata()
 {
     QSqlQuery query =  QSqlQuery(db.getdb());
     model= new QSqlQueryModel();
-    query.prepare("select `id`,`name`,`sname`,`tname`,`departament`,`speciality` from students");
+    query.prepare("select students.id, students.name, students.sname, students.tname, groups.code from students, groups where students.group = groups.id");
     query.exec();
     model->setQuery(query);
     ui->tableView->setModel(model);
