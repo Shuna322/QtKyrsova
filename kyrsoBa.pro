@@ -35,7 +35,6 @@ SOURCES += \
     database.cpp \
     addstudentform.cpp \
     studentinformation.cpp \
-    changestudentinfo.cpp \
     adduserform.cpp
 
 HEADERS += \
@@ -47,7 +46,6 @@ HEADERS += \
     database.h \
     addstudentform.h \
     studentinformation.h \
-    changestudentinfo.h \
     adduserform.h
 
 FORMS += \
@@ -55,5 +53,4 @@ FORMS += \
     widget.ui \
     addstudentform.ui \
     studentinformation.ui \
-    changestudentinfo.ui \
     adduserform.ui

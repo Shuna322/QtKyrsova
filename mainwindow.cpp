@@ -71,7 +71,7 @@ void MainWindow::on_pushButton_clicked()
 void MainWindow::on_pushButton_2_clicked()
 {
     this->hide();
-    addStudent = new addStudentForm(0,this);
+    addStudent = new addStudentForm(0,this,false,0);
     addStudent->setFixedSize(addStudent->size());
     addStudent->show();
     getdata();
@@ -138,10 +138,10 @@ void MainWindow::on_pushButton_8_clicked()
 
 void MainWindow::on_pushButton_6_clicked()
 {
-    changeStudent = new changeStudentInfo(0,this,ui->comboBox->currentText().toInt());
-    changeStudent->setFixedSize(changeStudent->size());
+    addStudent = new addStudentForm(0,this,true,ui->comboBox->currentText().toInt());
+    addStudent->setFixedSize(addStudent->size());
     this->hide();
-    changeStudent->show();
+    addStudent->show();
 }
 
 void MainWindow::on_pushButton_7_clicked()

@@ -5,7 +5,7 @@
 #include <database.h>
 #include <user.h>
 #include "addstudentform.h"
-#include "changestudentinfo.h"
+//#include "changestudentinfo.h"
 #include "adduserform.h"
 #include <QMessageBox>
 
@@ -58,7 +58,7 @@ private:
     QString login, pass;
     database db;
     class addStudentForm *addStudent;
-    class changeStudentInfo *changeStudent;
+//    class changeStudentInfo *changeStudent;
     class Widget *prev;
     class addUserForm *addUser;
     QSqlQueryModel *model;
