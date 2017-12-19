@@ -13,9 +13,10 @@ MainWindow::MainWindow(QWidget *parent, QString _l, QString _p, class Widget *_p
 {
     ui->setupUi(this);
     createUserObj();
-    this->getdata();
+    setdepartament();
+    this->getdata(0);
     int a = userobj.getacces();
-    switch (a) {
+    /*switch (a) {
     case 1:{
         ui->pushButton_2->setEnabled(0); ui->action->setEnabled(0);
         ui->pushButton_3->setEnabled(0); ui->action_2->setEnabled(0);
@@ -35,20 +36,21 @@ MainWindow::MainWindow(QWidget *parent, QString _l, QString _p, class Widget *_p
     }
     default:
         QCoreApplication::exit();
-    }
+    }*/
 }
 
-void MainWindow::getdata()
+void MainWindow::getdata(int id)
 {
     QSqlQuery query =  QSqlQuery(db.getdb());
     model= new QSqlQueryModel();
-    query.prepare("select students.id, students.name, students.sname, students.tname, groups.code from students, groups where students.group = groups.id");
+    query.prepare("select `groups`.`id`, `departaments`.`name`, `groups`.`name`, `groups`.`code` from `groups`, `departaments` where `groups`.`departament_code` = :ID;");
+    query.bindValue(":ID",id+1);
     query.exec();
     model->setQuery(query);
     ui->tableView->setModel(model);
-    ui->comboBox->setModel(model);
-    ui->comboBox->setModelColumn(0);
     ui->tableView->setColumnWidth(0,30);
+    ui->tableView->setColumnWidth(1,200);
+    ui->tableView->setColumnWidth(2,200);
 }
 
 MainWindow::~MainWindow()
@@ -74,7 +76,7 @@ void MainWindow::on_pushButton_2_clicked()
     addStudent = new addStudentForm(0,this,false,0);
     addStudent->setFixedSize(addStudent->size());
     addStudent->show();
-    getdata();
+    getdata(0);
 }
 
 void MainWindow::on_pushButton_4_clicked()
@@ -102,7 +104,7 @@ void MainWindow::on_pushButton_3_clicked()
     if (reply == QMessageBox::Yes) {
         query.exec();
     }
-    this->getdata();
+    this->getdata(0);
 }
 
 void MainWindow::on_tableView_doubleClicked(const QModelIndex &index)
@@ -110,7 +112,6 @@ void MainWindow::on_tableView_doubleClicked(const QModelIndex &index)
     if (userobj.getacces() >= 2)
     {
         QModelIndex x = QModelIndex(index.sibling(index.row(),0));
-        qDebug() << x.data().toInt();
         openFormWithStudentInfo(x.data().toInt());
     }
 }
@@ -151,12 +152,9 @@ void MainWindow::on_pushButton_7_clicked()
 
 void MainWindow::openFormWithStudentInfo(int x)
 {
-    studentInformation infoForm(0,x);
-    infoForm.setModal(true);
-    infoForm.setFixedSize(infoForm.size());
-    Qt::WindowFlags flags(Qt::WindowCloseButtonHint);
-    infoForm.setWindowFlags(flags);
-    infoForm.exec();
+    infoForm = new studentControl(0,this, x);
+    infoForm->setFixedSize(infoForm->size());
+    infoForm->show();
 }
 
 void MainWindow::on_pushButton_5_clicked()
@@ -192,4 +190,20 @@ void MainWindow::on_tableView_clicked(const QModelIndex &index)
 {
     if (userobj.getacces() >= 2)
         ui->comboBox->setCurrentIndex(index.row());
+}
+
+void MainWindow::setdepartament()
+{
+    QSqlQuery query =  QSqlQuery(db.getdb());
+    model= new QSqlQueryModel();
+    query.prepare("select `departaments`.`name` from `departaments`;");
+    query.exec();
+    model->setQuery(query);
+    ui->comboBox->setModel(model);
+    ui->comboBox->setModelColumn(0);
+}
+
+void MainWindow::on_comboBox_currentIndexChanged(int index)
+{
+    getdata(index);
 }

@@ -50,7 +50,7 @@ void addStudentForm::on_pushButton_2_clicked()
     st.addStudentToDB();
     this->hide();
     previousform->show();
-    previousform->getdata();
+    previousform->getdata(0);
 }
 
 void addStudentForm::on_lineEdit_textChanged(const QString &arg1)

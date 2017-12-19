@@ -5,7 +5,7 @@
 #include <database.h>
 #include <user.h>
 #include "addstudentform.h"
-//#include "changestudentinfo.h"
+#include "studentcontrol.h"
 #include "adduserform.h"
 #include <QMessageBox>
 
@@ -19,7 +19,7 @@ class MainWindow : public QMainWindow
 
 public:
     explicit MainWindow(QWidget *parent = 0, QString _l = "ПОМИЛКА", QString _p = "ПОМИЛКА", class Widget *_prev=0);
-    void getdata();
+    void getdata(int id);
     ~MainWindow();
 
 private slots:
@@ -53,6 +53,10 @@ private slots:
 
     void on_tableView_clicked(const QModelIndex &index);
 
+    void setdepartament();
+
+    void on_comboBox_currentIndexChanged(int index);
+
 private:
     Ui::MainWindow *ui;
     QString login, pass;
@@ -64,6 +68,7 @@ private:
     QSqlQueryModel *model;
     user userobj;
     int curentID;
+    class studentControl *infoForm;
 };
 
 #endif // MAINWINDOW_H

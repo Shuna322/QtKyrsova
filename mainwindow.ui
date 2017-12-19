@@ -96,19 +96,6 @@
      <bool>false</bool>
     </attribute>
    </widget>
-   <widget class="QPushButton" name="pushButton_3">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>190</y>
-      <width>141</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Видалити студента</string>
-    </property>
-   </widget>
    <widget class="QComboBox" name="comboBox">
     <property name="geometry">
      <rect>
@@ -159,34 +146,6 @@
      <string>Добавити користувача</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_6">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>140</y>
-      <width>141</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Редагувати данні
- про студента</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_7">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>90</y>
-      <width>141</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Переглянути повну
-інформацію про студента</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="pushButton_8">
     <property name="geometry">
      <rect>
@@ -207,12 +166,9 @@
    <zorder>pushButton</zorder>
    <zorder>pushButton_2</zorder>
    <zorder>tableView</zorder>
-   <zorder>pushButton_3</zorder>
    <zorder>comboBox</zorder>
    <zorder>pushButton_4</zorder>
    <zorder>pushButton_5</zorder>
-   <zorder>pushButton_6</zorder>
-   <zorder>pushButton_7</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -233,7 +189,16 @@
     <addaction name="action_4"/>
     <addaction name="action_3"/>
    </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>Довідка</string>
+    </property>
+    <addaction name="action_5"/>
+    <addaction name="action_Qt"/>
+    <addaction name="action_7"/>
+   </widget>
    <addaction name="menu"/>
+   <addaction name="menu_2"/>
   </widget>
   <action name="action">
    <property name="enabled">
@@ -273,6 +238,21 @@
   <action name="action_6">
    <property name="text">
     <string>Добавити нового користувача</string>
+   </property>
+  </action>
+  <action name="action_5">
+   <property name="text">
+    <string>Про програму</string>
+   </property>
+  </action>
+  <action name="action_Qt">
+   <property name="text">
+    <string>Про Qt</string>
+   </property>
+  </action>
+  <action name="action_7">
+   <property name="text">
+    <string>Про автора</string>
    </property>
   </action>
  </widget>
