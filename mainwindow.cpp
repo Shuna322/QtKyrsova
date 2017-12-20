@@ -14,7 +14,6 @@ MainWindow::MainWindow(QWidget *parent, QString _l, QString _p, class Widget *_p
     ui->setupUi(this);
     createUserObj();
     setdepartament();
-    this->getdata();
     curentID = 0;
     int a = userobj.getacces();
     switch (a) {
@@ -166,7 +165,7 @@ void MainWindow::setdepartament()
     model->setQuery(query);
     ui->comboBox->setModel(model);
     ui->comboBox->setModelColumn(0);
-
+    getdata();
 }
 
 void MainWindow::on_comboBox_currentIndexChanged(int index)
