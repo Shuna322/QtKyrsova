@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>723</width>
-    <height>295</height>
+    <width>610</width>
+    <height>310</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -27,8 +27,8 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>570</x>
-      <y>240</y>
+      <x>460</x>
+      <y>260</y>
       <width>141</width>
       <height>23</height>
      </rect>
@@ -54,7 +54,7 @@
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>141</width>
+      <width>171</width>
       <height>41</height>
      </rect>
     </property>
@@ -65,10 +65,10 @@
    <widget class="QTableView" name="tableView">
     <property name="geometry">
      <rect>
-      <x>170</x>
-      <y>10</y>
-      <width>541</width>
-      <height>221</height>
+      <x>190</x>
+      <y>40</y>
+      <width>411</width>
+      <height>211</height>
      </rect>
     </property>
     <property name="textElideMode">
@@ -78,7 +78,7 @@
      <bool>false</bool>
     </property>
     <attribute name="horizontalHeaderVisible">
-     <bool>false</bool>
+     <bool>true</bool>
     </attribute>
     <attribute name="horizontalHeaderDefaultSectionSize">
      <number>100</number>
@@ -99,9 +99,9 @@
    <widget class="QComboBox" name="comboBox">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>60</y>
-      <width>141</width>
+      <x>190</x>
+      <y>10</y>
+      <width>411</width>
       <height>21</height>
      </rect>
     </property>
@@ -118,8 +118,8 @@
    <widget class="QPushButton" name="pushButton_4">
     <property name="geometry">
      <rect>
-      <x>420</x>
-      <y>240</y>
+      <x>310</x>
+      <y>260</y>
       <width>141</width>
       <height>23</height>
      </rect>
@@ -131,8 +131,8 @@
    <widget class="QPushButton" name="pushButton_5">
     <property name="geometry">
      <rect>
-      <x>270</x>
-      <y>240</y>
+      <x>160</x>
+      <y>260</y>
       <width>141</width>
       <height>23</height>
      </rect>
@@ -144,8 +144,8 @@
    <widget class="QPushButton" name="pushButton_8">
     <property name="geometry">
      <rect>
-      <x>550</x>
-      <y>240</y>
+      <x>440</x>
+      <y>260</y>
       <width>31</width>
       <height>20</height>
      </rect>
@@ -161,8 +161,8 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>90</y>
-      <width>141</width>
+      <y>60</y>
+      <width>171</width>
       <height>41</height>
      </rect>
     </property>
@@ -174,13 +174,30 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>140</y>
-      <width>141</width>
+      <y>110</y>
+      <width>171</width>
       <height>41</height>
      </rect>
     </property>
     <property name="text">
      <string>Редагувати групи</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_7">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>160</y>
+      <width>171</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Відкрити список студентів
+вибраної групи</string>
     </property>
    </widget>
    <zorder>pushButton_8</zorder>
@@ -192,13 +209,14 @@
    <zorder>pushButton_5</zorder>
    <zorder>pushButton_3</zorder>
    <zorder>pushButton_6</zorder>
+   <zorder>pushButton_7</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>723</width>
+     <width>610</width>
      <height>21</height>
     </rect>
    </property>
@@ -210,6 +228,7 @@
     <addaction name="action_2"/>
     <addaction name="separator"/>
     <addaction name="action_4"/>
+    <addaction name="action_6"/>
     <addaction name="action_3"/>
    </widget>
    <widget class="QMenu" name="menu_2">
@@ -228,15 +247,18 @@
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>Добавити студента</string>
+    <string>Редагувати вітділення</string>
    </property>
    <property name="shortcut">
-    <string>Ctrl+A</string>
+    <string>Ctrl+V</string>
    </property>
   </action>
   <action name="action_2">
    <property name="text">
-    <string>Видалити студента</string>
+    <string>Редагувати групи</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+G</string>
    </property>
   </action>
   <action name="action_3">
@@ -254,13 +276,25 @@
    <property name="text">
     <string>Змінити користувача</string>
    </property>
+   <property name="shortcut">
+    <string>F10</string>
+   </property>
    <property name="visible">
     <bool>true</bool>
    </property>
   </action>
   <action name="action_6">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>Добавити нового користувача</string>
+   </property>
+   <property name="visible">
+    <bool>true</bool>
    </property>
   </action>
   <action name="action_5">

@@ -8,6 +8,7 @@
 #include "studentcontrol.h"
 #include "adduserform.h"
 #include <QMessageBox>
+#include <QLineEdit>
 
 namespace Ui {
 class MainWindow;
@@ -37,7 +38,7 @@ private slots:
 
     void on_action_3_triggered();
 
-    void openFormWithStudentInfo(int x);
+    void openGroupInfo(int x);
 
     void on_pushButton_8_clicked();
 
@@ -54,6 +55,14 @@ private slots:
     void on_action_7_triggered();
 
     void on_action_5_triggered();
+
+    void on_action_6_triggered();
+
+    void on_tableView_clicked(const QModelIndex &index);
+
+    void on_pushButton_7_clicked();
+
+    void on_action_4_triggered();
 
 private:
     Ui::MainWindow *ui;
