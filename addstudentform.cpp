@@ -1,14 +1,19 @@
 #include "addstudentform.h"
 #include "ui_addstudentform.h"
 
-addStudentForm::addStudentForm(QWidget *parent,class MainWindow *_previousform) :
-    QWidget(parent), previousform(_previousform),
+addStudentForm::addStudentForm(QWidget *parent,class MainWindow *_previousform, class studentControl *_prevStCon, bool _changeInfoForm, int _studentID) :
+    QWidget(parent), previousform(_previousform), changeInfoForm(_changeInfoForm), studentID(_studentID), prevStCon(_prevStCon),
     ui(new Ui::addStudentForm)
 {
     ui->setupUi(this);
     ui->dateEdit->setMaximumDate(QDate::currentDate());
-    on_comboBox_4_currentIndexChanged(0);   //потрібно загрузити хренатень з БД
+    on_comboBox_4_currentIndexChanged(0);
     loadDepartamentFromDB();
+    if (changeInfoForm){
+        ui->label_10->setText("Відредагуйте інформацію про студента");
+        this->setWindowTitle("Форма редагування інформації про студента");
+        loadStudentDataFromBD();
+    }
 }
 
 addStudentForm::~addStudentForm()
@@ -18,8 +23,16 @@ addStudentForm::~addStudentForm()
 
 void addStudentForm::on_pushButton_clicked()
 {
-    this->hide();
-    previousform->show();
+    if (!prevStCon)
+    {
+        this->hide();
+        previousform->show();
+    }
+    else
+    {
+        this->hide();
+        prevStCon->show();
+    }
 }
 
 void addStudentForm::on_pushButton_2_clicked()
@@ -39,6 +52,9 @@ void addStudentForm::on_pushButton_2_clicked()
     type_of_education = (bool)ui->comboBox_2->currentIndex();
     startEdu = ui->dateEdit_2->date();
     student st(name,sname,tname,sex,bday,phone_number,adress,type_of_education,group,startEdu);
+    if (changeInfoForm)
+        st.replaceStudentInDB(studentID);
+    else
     st.addStudentToDB();
     this->hide();
     previousform->show();
@@ -100,6 +116,23 @@ void addStudentForm::on_comboBox_5_currentTextChanged(const QString &arg1)
     model->setQuery(*query);
     ui->comboBox_6->setModel(model);
     ui->comboBox_6->setModelColumn(0);
+}
+
+void addStudentForm::loadStudentDataFromBD()
+{
+    st.getdataFromDB(studentID);
+    ui->lineEdit->setText(st.getname());
+    ui->lineEdit_2->setText(st.getsname());
+    ui->lineEdit_3->setText(st.gettname());
+    ui->comboBox->setCurrentIndex(st.getsex());
+    ui->dateEdit->setDate(st.getbday());
+    ui->lineEdit_7->setText(st.getphone_number());
+    ui->lineEdit_8->setText(st.getadress());
+    ui->comboBox_2->setCurrentIndex(st.gettype_of_education());
+    ui->comboBox_4->setCurrentText(st.getDepartamentName());
+    ui->comboBox_5->setCurrentText(st.getGroupName());
+    ui->comboBox_6->setCurrentText(st.getGroupCode());
+    ui->dateEdit_2->setDate(st.getstartEdu());
 }
 
 int addStudentForm::getGroupID()

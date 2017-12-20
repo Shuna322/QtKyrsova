@@ -7,8 +7,7 @@ class student : public person
     bool type_of_education;  //free\paid
     int group;
     QDate startEdu;
-    QSqlQuery *query;
-    database db;
+
 public:
     student();
     student(QString _name,QString _sname,QString _tname, bool _sex, QDate _bday,QString _phone_number, QString _adress, bool _type_of_education, int _group, QDate _startEdu);

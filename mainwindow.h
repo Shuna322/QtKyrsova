@@ -5,9 +5,10 @@
 #include <database.h>
 #include <user.h>
 #include "addstudentform.h"
-#include "changestudentinfo.h"
+#include "studentcontrol.h"
 #include "adduserform.h"
 #include <QMessageBox>
+#include <QLineEdit>
 
 namespace Ui {
 class MainWindow;
@@ -29,8 +30,6 @@ private slots:
 
     void on_pushButton_4_clicked();
 
-    void on_pushButton_3_clicked();
-
     void on_tableView_doubleClicked(const QModelIndex &index);
 
     void on_action_triggered();
@@ -39,11 +38,7 @@ private slots:
 
     void on_action_3_triggered();
 
-    void on_pushButton_6_clicked();
-
-    void on_pushButton_7_clicked();
-
-    void openFormWithStudentInfo(int x);
+    void openGroupInfo(int x);
 
     void on_pushButton_8_clicked();
 
@@ -51,17 +46,33 @@ private slots:
 
     void createUserObj();
 
+    void setdepartament();
+
+    void on_comboBox_currentIndexChanged(int index);
+
+    void on_action_Qt_triggered();
+
+    void on_action_7_triggered();
+
+    void on_action_5_triggered();
+
+    void on_action_6_triggered();
+
     void on_tableView_clicked(const QModelIndex &index);
+
+    void on_pushButton_7_clicked();
+
+    void on_action_4_triggered();
 
 private:
     Ui::MainWindow *ui;
     QString login, pass;
     database db;
     class addStudentForm *addStudent;
-    class changeStudentInfo *changeStudent;
     class Widget *prev;
     class addUserForm *addUser;
     QSqlQueryModel *model;
+    class studentControl *infoForm;
     user userobj;
     int curentID;
 };
