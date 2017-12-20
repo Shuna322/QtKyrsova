@@ -14,7 +14,7 @@ MainWindow::MainWindow(QWidget *parent, QString _l, QString _p, class Widget *_p
     ui->setupUi(this);
     createUserObj();
     setdepartament();
-    this->getdata(0);
+    this->getdata();
     int a = userobj.getacces();
     /*switch (a) {
     case 1:{
@@ -39,12 +39,13 @@ MainWindow::MainWindow(QWidget *parent, QString _l, QString _p, class Widget *_p
     }*/
 }
 
-void MainWindow::getdata(int id)
+void MainWindow::getdata()
 {
     QSqlQuery query =  QSqlQuery(db.getdb());
     model= new QSqlQueryModel();
-    query.prepare("select `groups`.`id`, `departaments`.`name`, `groups`.`name`, `groups`.`code` from `groups`, `departaments` where `groups`.`departament_code` = :ID;");
-    query.bindValue(":ID",id+1);
+    query.prepare("select `groups`.`id`, `departaments`.`name`, `groups`.`name`, `groups`.`code` from `groups`, `departaments` where `groups`.`departament_code` = :ID and `departaments`.`name` = :name;");
+    query.bindValue(":ID",ui->comboBox->currentIndex()+1);
+    query.bindValue(":name",ui->comboBox->currentText());
     query.exec();
     model->setQuery(query);
     ui->tableView->setModel(model);
@@ -68,15 +69,13 @@ void MainWindow::on_pushButton_clicked()
         QCoreApplication::exit();
 }
 
-
-
 void MainWindow::on_pushButton_2_clicked()
 {
     this->hide();
-    addStudent = new addStudentForm(0,this,false,0);
+    addStudent = new addStudentForm(0,this,0,false,0);
     addStudent->setFixedSize(addStudent->size());
     addStudent->show();
-    getdata(0);
+    getdata();
 }
 
 void MainWindow::on_pushButton_4_clicked()
@@ -91,22 +90,6 @@ void MainWindow::on_pushButton_4_clicked()
     }
 }
 
-void MainWindow::on_pushButton_3_clicked()
-{
-    QSqlQuery query = QSqlQuery(db.getdb());
-    query.prepare("delete from `students` where `id` = :id");
-    int id = ui->comboBox->currentText().toInt();
-    query.bindValue(":id",id);
-
-    QMessageBox::StandardButton reply;
-    reply = QMessageBox::question(this, "Увага","Ви дійсно хочете видалити данні цього студента ?",
-                                  QMessageBox::Yes|QMessageBox::No);
-    if (reply == QMessageBox::Yes) {
-        query.exec();
-    }
-    this->getdata(0);
-}
-
 void MainWindow::on_tableView_doubleClicked(const QModelIndex &index)
 {
     if (userobj.getacces() >= 2)
@@ -118,43 +101,28 @@ void MainWindow::on_tableView_doubleClicked(const QModelIndex &index)
 
 void MainWindow::on_action_triggered()
 {
-    on_pushButton_2_clicked();
 }
 
 void MainWindow::on_action_2_triggered()
 {
-    on_pushButton_3_clicked();
 }
 
 void MainWindow::on_action_3_triggered()
 {
-    on_pushButton_clicked();
+}
+
+void MainWindow::openFormWithStudentInfo(int x)
+{
+    infoForm = new studentControl(0, this, x);
+    infoForm->setFixedSize(infoForm->size());
+    this->hide();
+    infoForm->show();
 }
 
 void MainWindow::on_pushButton_8_clicked()
 {
     QDesktopServices::openUrl(QUrl("https://i.imgur.com/xGZuM7V.png", QUrl::TolerantMode));
     QMessageBox::information(0,"Не скучайте","На досузі можете порозгадувати",QMessageBox::Ok);
-}
-
-void MainWindow::on_pushButton_6_clicked()
-{
-    addStudent = new addStudentForm(0,this,true,ui->comboBox->currentText().toInt());
-    addStudent->setFixedSize(addStudent->size());
-    this->hide();
-    addStudent->show();
-}
-
-void MainWindow::on_pushButton_7_clicked()
-{
-    openFormWithStudentInfo(ui->comboBox->currentText().toInt());
-}
-
-void MainWindow::openFormWithStudentInfo(int x)
-{
-    infoForm = new studentControl(0,this, x);
-    infoForm->setFixedSize(infoForm->size());
-    infoForm->show();
 }
 
 void MainWindow::on_pushButton_5_clicked()
@@ -186,12 +154,6 @@ void MainWindow::createUserObj()
 
 }
 
-void MainWindow::on_tableView_clicked(const QModelIndex &index)
-{
-    if (userobj.getacces() >= 2)
-        ui->comboBox->setCurrentIndex(index.row());
-}
-
 void MainWindow::setdepartament()
 {
     QSqlQuery query =  QSqlQuery(db.getdb());
@@ -205,5 +167,21 @@ void MainWindow::setdepartament()
 
 void MainWindow::on_comboBox_currentIndexChanged(int index)
 {
-    getdata(index);
+    getdata();
+}
+
+void MainWindow::on_action_Qt_triggered()
+{
+    QMessageBox::aboutQt(this);
+}
+
+void MainWindow::on_action_7_triggered()
+{
+    QMessageBox::information(this,"Про автора:","Made by Alex \"ShunA\" Pokydko");
+}
+
+void MainWindow::on_action_5_triggered()
+{
+    QMessageBox::information(this,"Про програму:","Версія 0.8.9а \nЕтапи розробки можна переглянути на \nhttps://github.com/Shuna322/aloha-shaka-laka/");
+
 }

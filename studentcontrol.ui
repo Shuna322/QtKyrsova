@@ -91,6 +91,11 @@
 інформацію про студента</string>
      </property>
     </widget>
+    <widget class="QPushButton" name="addSTbutton">
+     <property name="text">
+      <string>Добавити студента</string>
+     </property>
+    </widget>
    </widget>
   </widget>
  </widget>

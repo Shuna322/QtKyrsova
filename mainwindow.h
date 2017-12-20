@@ -19,7 +19,7 @@ class MainWindow : public QMainWindow
 
 public:
     explicit MainWindow(QWidget *parent = 0, QString _l = "ПОМИЛКА", QString _p = "ПОМИЛКА", class Widget *_prev=0);
-    void getdata(int id);
+    void getdata();
     ~MainWindow();
 
 private slots:
@@ -29,8 +29,6 @@ private slots:
 
     void on_pushButton_4_clicked();
 
-    void on_pushButton_3_clicked();
-
     void on_tableView_doubleClicked(const QModelIndex &index);
 
     void on_action_triggered();
@@ -38,10 +36,6 @@ private slots:
     void on_action_2_triggered();
 
     void on_action_3_triggered();
-
-    void on_pushButton_6_clicked();
-
-    void on_pushButton_7_clicked();
 
     void openFormWithStudentInfo(int x);
 
@@ -51,24 +45,27 @@ private slots:
 
     void createUserObj();
 
-    void on_tableView_clicked(const QModelIndex &index);
-
     void setdepartament();
 
     void on_comboBox_currentIndexChanged(int index);
+
+    void on_action_Qt_triggered();
+
+    void on_action_7_triggered();
+
+    void on_action_5_triggered();
 
 private:
     Ui::MainWindow *ui;
     QString login, pass;
     database db;
     class addStudentForm *addStudent;
-//    class changeStudentInfo *changeStudent;
     class Widget *prev;
     class addUserForm *addUser;
     QSqlQueryModel *model;
+    class studentControl *infoForm;
     user userobj;
     int curentID;
-    class studentControl *infoForm;
 };
 
 #endif // MAINWINDOW_H

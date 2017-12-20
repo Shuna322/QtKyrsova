@@ -1,13 +1,13 @@
 #include "addstudentform.h"
 #include "ui_addstudentform.h"
 
-addStudentForm::addStudentForm(QWidget *parent,class MainWindow *_previousform, bool _changeInfoForm, int _studentID) :
-    QWidget(parent), previousform(_previousform), changeInfoForm(_changeInfoForm), studentID(_studentID),
+addStudentForm::addStudentForm(QWidget *parent,class MainWindow *_previousform, class studentControl *_prevStCon, bool _changeInfoForm, int _studentID) :
+    QWidget(parent), previousform(_previousform), changeInfoForm(_changeInfoForm), studentID(_studentID), prevStCon(_prevStCon),
     ui(new Ui::addStudentForm)
 {
     ui->setupUi(this);
     ui->dateEdit->setMaximumDate(QDate::currentDate());
-    on_comboBox_4_currentIndexChanged(0);   //потрібно загрузити
+    on_comboBox_4_currentIndexChanged(0);
     loadDepartamentFromDB();
     if (changeInfoForm){
         ui->label_10->setText("Відредагуйте інформацію про студента");
@@ -23,8 +23,16 @@ addStudentForm::~addStudentForm()
 
 void addStudentForm::on_pushButton_clicked()
 {
-    this->hide();
-    previousform->show();
+    if (!prevStCon)
+    {
+        this->hide();
+        previousform->show();
+    }
+    else
+    {
+        this->hide();
+        prevStCon->show();
+    }
 }
 
 void addStudentForm::on_pushButton_2_clicked()
@@ -50,7 +58,7 @@ void addStudentForm::on_pushButton_2_clicked()
     st.addStudentToDB();
     this->hide();
     previousform->show();
-    previousform->getdata(0);
+    previousform->getdata();
 }
 
 void addStudentForm::on_lineEdit_textChanged(const QString &arg1)

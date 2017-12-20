@@ -112,13 +112,8 @@
      </font>
     </property>
     <property name="currentText">
-     <string>Виберіть ID студента</string>
+     <string/>
     </property>
-    <item>
-     <property name="text">
-      <string>Виберіть ID студента</string>
-     </property>
-    </item>
    </widget>
    <widget class="QPushButton" name="pushButton_4">
     <property name="geometry">
@@ -162,6 +157,32 @@
      <bool>true</bool>
     </property>
    </widget>
+   <widget class="QPushButton" name="pushButton_3">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>90</y>
+      <width>141</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Редагувати вітділення</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_6">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>140</y>
+      <width>141</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Редагувати групи</string>
+    </property>
+   </widget>
    <zorder>pushButton_8</zorder>
    <zorder>pushButton</zorder>
    <zorder>pushButton_2</zorder>
@@ -169,6 +190,8 @@
    <zorder>comboBox</zorder>
    <zorder>pushButton_4</zorder>
    <zorder>pushButton_5</zorder>
+   <zorder>pushButton_3</zorder>
+   <zorder>pushButton_6</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

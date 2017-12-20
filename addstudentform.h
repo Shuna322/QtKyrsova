@@ -5,6 +5,7 @@
 #include <student.h>
 #include "database.h"
 #include "mainwindow.h"
+#include "studentcontrol.h"
 
 namespace Ui {
 class addStudentForm;
@@ -15,7 +16,7 @@ class addStudentForm : public QWidget
     Q_OBJECT
 
 public:
-    explicit addStudentForm(QWidget *parent = 0,class MainWindow *_previousform=0, bool _changeInfoForm = 0, int _studentID = 0);
+    explicit addStudentForm(QWidget *parent = 0,class MainWindow *_previousform=0, class studentControl *_prevStCon = 0, bool _changeInfoForm = 0, int _studentID = 0);
     ~addStudentForm();
 
 private slots:
@@ -48,6 +49,7 @@ private slots:
 private:
     Ui::addStudentForm *ui;
     class MainWindow *previousform;
+    class studentControl *prevStCon;
     QSqlQuery *query;
     QSqlQueryModel *model;
     database db;
