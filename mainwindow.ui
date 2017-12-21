@@ -18,7 +18,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>../../Desktop/Icojam-Blue-Bits-Database-search.ico</normaloff>../../Desktop/Icojam-Blue-Bits-Database-search.ico</iconset>
+    <normaloff>../Desktop/Icojam-Blue-Bits-Database-search.ico</normaloff>../Desktop/Icojam-Blue-Bits-Database-search.ico</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QPushButton" name="pushButton_2">
@@ -84,8 +84,13 @@
      </font>
     </property>
     <property name="currentText">
-     <string/>
+     <string>Виберіть вітділення:</string>
     </property>
+    <item>
+     <property name="text">
+      <string>Виберіть вітділення:</string>
+     </property>
+    </item>
    </widget>
    <widget class="QPushButton" name="pushButton_8">
     <property name="geometry">
