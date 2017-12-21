@@ -41,9 +41,18 @@ MainWindow::MainWindow(QWidget *parent, QString _l, QString _p, class Widget *_p
 void MainWindow::getdata()
 {
     QSqlQuery query =  QSqlQuery(db.getdb());
+    int id;
+    query.prepare("select `departaments`.`id` from `departaments` where `departaments`.`name` = :name;");
+    query.bindValue(":name",ui->comboBox->currentText());
+    query.exec();
+    while(query.next())
+    {
+        id = query.value(0).toInt();
+    }
+    /////////////////////////////////
     model= new QSqlQueryModel();
     query.prepare("select `groups`.`id`, `groups`.`name`, `groups`.`code` from `groups`, `departaments` where `groups`.`departament_code` = :ID and `departaments`.`name` = :name;");
-    query.bindValue(":ID",ui->comboBox->currentIndex()+1);
+    query.bindValue(":ID",id);
     query.bindValue(":name",ui->comboBox->currentText());
     query.exec();
     model->setQuery(query);
@@ -218,3 +227,4 @@ void MainWindow::on_pushButton_3_clicked()
     this->hide();
     depForm->show();
 }
+
