@@ -36,7 +36,9 @@ SOURCES += \
     addstudentform.cpp \
     studentinformation.cpp \
     adduserform.cpp \
-    studentcontrol.cpp
+    studentcontrol.cpp \
+    departamentcontol.cpp \
+    departamentchange.cpp
 
 HEADERS += \
     mainwindow.h \
@@ -48,7 +50,9 @@ HEADERS += \
     addstudentform.h \
     studentinformation.h \
     adduserform.h \
-    studentcontrol.h
+    studentcontrol.h \
+    departamentcontol.h \
+    departamentchange.h
 
 FORMS += \
     mainwindow.ui \
@@ -56,4 +60,6 @@ FORMS += \
     addstudentform.ui \
     studentinformation.ui \
     adduserform.ui \
-    studentcontrol.ui
+    studentcontrol.ui \
+    departamentcontol.ui \
+    departamentchange.ui
