@@ -211,3 +211,11 @@ void MainWindow::on_action_4_triggered()
 {
         on_pushButton_4_clicked();
 }
+
+void MainWindow::on_pushButton_3_clicked()
+{
+    depForm = new departamentContol(0,this);
+    depForm->setFixedSize(depForm->size());
+    this->hide();
+    depForm->show();
+}

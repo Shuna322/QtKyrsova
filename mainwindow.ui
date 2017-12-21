@@ -21,34 +21,6 @@
     <normaloff>../../Desktop/Icojam-Blue-Bits-Database-search.ico</normaloff>../../Desktop/Icojam-Blue-Bits-Database-search.ico</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="pushButton">
-    <property name="enabled">
-     <bool>true</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>460</x>
-      <y>260</y>
-      <width>141</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Вихід</string>
-    </property>
-    <property name="checkable">
-     <bool>false</bool>
-    </property>
-    <property name="autoDefault">
-     <bool>false</bool>
-    </property>
-    <property name="default">
-     <bool>false</bool>
-    </property>
-    <property name="flat">
-     <bool>false</bool>
-    </property>
-   </widget>
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
@@ -115,39 +87,13 @@
      <string/>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_4">
-    <property name="geometry">
-     <rect>
-      <x>310</x>
-      <y>260</y>
-      <width>141</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Змінити користувача</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_5">
-    <property name="geometry">
-     <rect>
-      <x>160</x>
-      <y>260</y>
-      <width>141</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Добавити користувача</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="pushButton_8">
     <property name="geometry">
      <rect>
-      <x>440</x>
+      <x>450</x>
       <y>260</y>
       <width>31</width>
-      <height>20</height>
+      <height>21</height>
      </rect>
     </property>
     <property name="text">
@@ -200,6 +146,54 @@
 вибраної групи</string>
     </property>
    </widget>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>260</y>
+      <width>411</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QPushButton" name="pushButton_5">
+       <property name="text">
+        <string>Добавити користувача</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_4">
+       <property name="text">
+        <string>Змінити користувача</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="text">
+        <string>Вихід</string>
+       </property>
+       <property name="checkable">
+        <bool>false</bool>
+       </property>
+       <property name="autoDefault">
+        <bool>false</bool>
+       </property>
+       <property name="default">
+        <bool>false</bool>
+       </property>
+       <property name="flat">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
    <zorder>pushButton_8</zorder>
    <zorder>pushButton</zorder>
    <zorder>pushButton_2</zorder>
@@ -210,6 +204,7 @@
    <zorder>pushButton_3</zorder>
    <zorder>pushButton_6</zorder>
    <zorder>pushButton_7</zorder>
+   <zorder>pushButton_8</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

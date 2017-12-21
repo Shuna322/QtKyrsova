@@ -7,6 +7,7 @@
 #include "addstudentform.h"
 #include "studentcontrol.h"
 #include "adduserform.h"
+#include "departamentcontol.h"
 #include <QMessageBox>
 #include <QLineEdit>
 
@@ -21,6 +22,7 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0, QString _l = "ПОМИЛКА", QString _p = "ПОМИЛКА", class Widget *_prev=0);
     void getdata();
+    void setdepartament();
     ~MainWindow();
 
 private slots:
@@ -46,8 +48,6 @@ private slots:
 
     void createUserObj();
 
-    void setdepartament();
-
     void on_comboBox_currentIndexChanged(int index);
 
     void on_action_Qt_triggered();
@@ -64,6 +64,8 @@ private slots:
 
     void on_action_4_triggered();
 
+    void on_pushButton_3_clicked();
+
 private:
     Ui::MainWindow *ui;
     QString login, pass;
@@ -73,6 +75,7 @@ private:
     class addUserForm *addUser;
     QSqlQueryModel *model;
     class studentControl *infoForm;
+    class departamentContol *depForm;
     user userobj;
     int curentID;
 };

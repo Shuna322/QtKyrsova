@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>departamentContol</class>
+ <widget class="QWidget" name="departamentContol">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>321</width>
+    <height>157</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>301</width>
+     <height>138</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QPushButton" name="addbutton">
+      <property name="text">
+       <string>Добавити</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QComboBox" name="comboBox"/>
+    </item>
+    <item row="2" column="0">
+     <widget class="QPushButton" name="editbutton">
+      <property name="text">
+       <string>Редагувати</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QPushButton" name="dellbutton">
+      <property name="text">
+       <string>Видалити</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0">
+     <widget class="QPushButton" name="bbutton">
+      <property name="text">
+       <string>Назад</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
