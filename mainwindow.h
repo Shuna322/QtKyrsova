@@ -8,6 +8,7 @@
 #include "studentcontrol.h"
 #include "adduserform.h"
 #include "departamentcontol.h"
+#include "groupcontrol.h"
 #include <QMessageBox>
 #include <QLineEdit>
 
@@ -66,6 +67,8 @@ private slots:
 
     void on_pushButton_3_clicked();
 
+    void on_pushButton_6_clicked();
+
 private:
     Ui::MainWindow *ui;
     QString login, pass;
@@ -76,6 +79,7 @@ private:
     QSqlQueryModel *model;
     class studentControl *infoForm;
     class departamentContol *depForm;
+    class groupControl *groupConForm;
     user userobj;
     int curentID;
 };

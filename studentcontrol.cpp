@@ -70,7 +70,11 @@ void studentControl::on_viewbutton_clicked()
 
 void studentControl::on_addSTbutton_clicked()
 {
-
+    this->hide();
+    addStudent = new addStudentForm(0,0,this,true,studentID);
+    addStudent->setFixedSize(addStudent->size());
+    addStudent->show();
+    getinfofromBD();
 }
 
 void studentControl::on_tableView_clicked(const QModelIndex &index)

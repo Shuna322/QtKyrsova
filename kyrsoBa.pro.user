@@ -1,22 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<<<<<<< HEAD
-<!-- Written by QtCreator 4.4.1, 2017-12-20T22:05:22. -->
-=======
-<<<<<<< HEAD
-<!-- Written by QtCreator 4.4.1, 2017-12-21T14:39:34. -->
-=======
-<<<<<<< HEAD
-<!-- Written by QtCreator 4.4.1, 2017-12-18T20:53:39. -->
-=======
-<!-- Written by QtCreator 4.4.1, 2017-12-20T15:07:28. -->
->>>>>>> 8c45d808ce3dd888fded1a82a17bb6501bb9cdf6
->>>>>>> 806d72ec96cb44b6b70c36234187ceac518ba484
->>>>>>> 13cb5cbe48533bc07e15906ea8cede1876fc8945
+<!-- Written by QtCreator 4.4.1, 2017-12-22T14:21:29. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
-  <value type="QByteArray">{9204a0b8-8504-4794-8ae4-c39960eca3b9}</value>
+  <value type="QByteArray">{9815862d-a219-4189-8d8f-1a0676f7279a}</value>
  </data>
  <data>
   <variable>ProjectExplorer.Project.ActiveTarget</variable>
@@ -297,8 +285,8 @@
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">kyrsoBa</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">kyrsoBa2</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:C:/aloha-shaka-laka/kyrsoBa.pro</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:C:/Users/Sashk/Documents/kyrsoBa/kyrsoBa.pro</value>
     <value type="bool" key="QmakeProjectManager.QmakeRunConfiguration.UseLibrarySearchPath">true</value>
     <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.CommandLineArguments"></value>
     <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.ProFile">kyrsoBa.pro</value>

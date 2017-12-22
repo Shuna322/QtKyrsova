@@ -62,7 +62,7 @@ void departamentContol::on_editbutton_clicked()
 void departamentContol::on_dellbutton_clicked()
 {
     /*QMessageBox::StandardButton reply;
-    reply = QMessageBox::question(this, "Увага","Группи і студенти данного вітділення також будуть видалені !\nВи дійсно хочете видалити данне вітділення ?",
+    reply = QMessageBox::question(this, "Увага","Группи і студенти данного відділення також будуть видалені !\nВи дійсно хочете видалити данне відділення ?",
                                   QMessageBox::Yes|QMessageBox::No);
     if (reply == QMessageBox::Yes) {
         QSqlQuery query = QSqlQuery(db.getdb());

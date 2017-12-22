@@ -99,7 +99,7 @@ void addStudentForm::on_comboBox_4_currentIndexChanged(int index)
     query = new QSqlQuery(db.getdb());
     model= new QSqlQueryModel();
     query->prepare("select distinct `name` from groups where `departament_code` = :index");
-    query->bindValue(":index",index+1);
+    query->bindValue(":index",index+1);    //Need to be fixed
     query->exec();
     model->setQuery(*query);
     ui->comboBox_5->setModel(model);
