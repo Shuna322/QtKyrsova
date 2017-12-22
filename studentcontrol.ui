@@ -6,20 +6,69 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>600</width>
-    <height>326</height>
+    <width>610</width>
+    <height>310</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <widget class="QSplitter" name="splitter">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>260</y>
+     <width>591</width>
+     <height>34</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+   <widget class="QPushButton" name="bbutton">
+    <property name="text">
+     <string>Назад</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="dellbutton">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="text">
+     <string>Видалити студента</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="edibutton">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="text">
+     <string>Редагувати данні
+ про студента</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="viewbutton">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="text">
+     <string>Переглянути повну
+інформацію про студента</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="addSTbutton">
+    <property name="text">
+     <string>Добавити студента</string>
+    </property>
+   </widget>
+  </widget>
   <widget class="QSplitter" name="splitter_2">
    <property name="geometry">
     <rect>
      <x>10</x>
      <y>10</y>
-     <width>581</width>
-     <height>311</height>
+     <width>591</width>
+     <height>241</height>
     </rect>
    </property>
    <property name="orientation">
@@ -55,47 +104,6 @@
     <attribute name="verticalHeaderVisible">
      <bool>false</bool>
     </attribute>
-   </widget>
-   <widget class="QSplitter" name="splitter">
-    <property name="orientation">
-     <enum>Qt::Horizontal</enum>
-    </property>
-    <widget class="QPushButton" name="bbutton">
-     <property name="text">
-      <string>Назад</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="dellbutton">
-     <property name="enabled">
-      <bool>false</bool>
-     </property>
-     <property name="text">
-      <string>Видалити студента</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="edibutton">
-     <property name="enabled">
-      <bool>false</bool>
-     </property>
-     <property name="text">
-      <string>Редагувати данні
- про студента</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="viewbutton">
-     <property name="enabled">
-      <bool>false</bool>
-     </property>
-     <property name="text">
-      <string>Переглянути повну
-інформацію про студента</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="addSTbutton">
-     <property name="text">
-      <string>Добавити студента</string>
-     </property>
-    </widget>
    </widget>
   </widget>
  </widget>
