@@ -8,7 +8,7 @@ departamentChange::departamentChange(QWidget *parent, bool _mode, int _id) :
     ui->setupUi(this);
     if(mode)
     {
-        this->setWindowTitle("Редагування вітділення");
+        this->setWindowTitle("Редагування відділення");
         QSqlQuery query =  QSqlQuery(db.getdb());
         QString name;
         query.prepare("select `departaments`.`name` from `departaments` where `departaments`.`id` = :id;");

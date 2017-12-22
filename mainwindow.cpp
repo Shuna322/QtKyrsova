@@ -228,3 +228,11 @@ void MainWindow::on_pushButton_3_clicked()
     depForm->show();
 }
 
+
+void MainWindow::on_pushButton_6_clicked()
+{
+    groupConForm = new groupControl(0,this);
+    groupConForm->setFixedSize(groupConForm->size());
+    this->hide();
+    groupConForm->show();
+}

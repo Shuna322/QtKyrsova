@@ -50,7 +50,7 @@
      <bool>false</bool>
     </property>
     <attribute name="horizontalHeaderVisible">
-     <bool>true</bool>
+     <bool>false</bool>
     </attribute>
     <attribute name="horizontalHeaderDefaultSectionSize">
      <number>100</number>
@@ -118,7 +118,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Редагувати вітділення</string>
+     <string>Редагувати відділення</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_6">
@@ -151,7 +151,7 @@
 вибраної групи</string>
     </property>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>190</x>
@@ -199,13 +199,10 @@
      </item>
     </layout>
    </widget>
-   <zorder>pushButton_8</zorder>
-   <zorder>pushButton</zorder>
+   <zorder>layoutWidget</zorder>
    <zorder>pushButton_2</zorder>
    <zorder>tableView</zorder>
    <zorder>comboBox</zorder>
-   <zorder>pushButton_4</zorder>
-   <zorder>pushButton_5</zorder>
    <zorder>pushButton_3</zorder>
    <zorder>pushButton_6</zorder>
    <zorder>pushButton_7</zorder>
