@@ -6,75 +6,18 @@
    <rect>
     <x>0</x>
     <y>0</y>
-<<<<<<< HEAD
-    <width>532</width>
-    <height>271</height>
-=======
     <width>259</width>
     <height>212</height>
->>>>>>> 34cfe9463eba70e3a4919e52e81bb9a62d0d3076
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-<<<<<<< HEAD
-  <widget class="QPushButton" name="pushButton">
-=======
   <widget class="QWidget" name="">
->>>>>>> 34cfe9463eba70e3a4919e52e81bb9a62d0d3076
    <property name="geometry">
     <rect>
      <x>10</x>
      <y>10</y>
-<<<<<<< HEAD
-     <width>191</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Добавити</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_2">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>90</y>
-     <width>191</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Редагувати</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_3">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>120</y>
-     <width>191</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Видалити</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_4">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>150</y>
-     <width>191</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Назад</string>
-   </property>
-=======
      <width>241</width>
      <height>191</height>
     </rect>
@@ -118,7 +61,6 @@
      </widget>
     </item>
    </layout>
->>>>>>> 34cfe9463eba70e3a4919e52e81bb9a62d0d3076
   </widget>
  </widget>
  <resources/>

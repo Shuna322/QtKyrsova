@@ -19,6 +19,7 @@ departamentChange::departamentChange(QWidget *parent, bool _mode, int _id) :
             name = query.value(0).toString();
         }
         ui->lineEdit->setText(name);
+        ui->pushButton->setText("Зберегти зміни");
     }
 }
 

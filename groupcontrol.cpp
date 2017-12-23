@@ -69,3 +69,18 @@ void groupControl::on_pushButton_clicked()
     changeForm = new groupchange();
     changeForm->exec();
 }
+
+void groupControl::on_pushButton_2_clicked()
+{
+    query = new QSqlQuery(db.getdb());
+    int groupID;
+    query->prepare("select `groups`.`id` from `groups` where `groups`.`code` = :name;");
+    query->bindValue(":name",ui->comboBox_3->currentText());
+    query->exec();
+    while(query->next())
+    {
+        groupID = query->value(0).toInt();
+    }
+    changeForm = new groupchange(0,true,groupID);
+    changeForm->exec();
+}

@@ -23,7 +23,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Прийняти</string>
+    <string>Добавити</string>
    </property>
   </widget>
   <widget class="QLabel" name="label">
