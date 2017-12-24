@@ -15,7 +15,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>../Desktop/Icojam-Blue-Bits-Database-search.ico</normaloff>../Desktop/Icojam-Blue-Bits-Database-search.ico</iconset>
+    <normaloff>icon.ico</normaloff>icon.ico</iconset>
   </property>
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
@@ -287,6 +287,10 @@
   <tabstop>lineEdit_7</tabstop>
   <tabstop>lineEdit_8</tabstop>
   <tabstop>comboBox_2</tabstop>
+  <tabstop>comboBox_4</tabstop>
+  <tabstop>comboBox_5</tabstop>
+  <tabstop>comboBox_6</tabstop>
+  <tabstop>dateEdit_2</tabstop>
   <tabstop>pushButton_2</tabstop>
   <tabstop>pushButton</tabstop>
  </tabstops>

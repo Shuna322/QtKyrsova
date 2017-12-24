@@ -50,6 +50,7 @@ void departamentContol::on_addbutton_clicked()
 {
     changeform = new departamentChange ();
     changeform->exec();
+    getDepartamentList();
 }
 
 void departamentContol::on_editbutton_clicked()
@@ -61,14 +62,28 @@ void departamentContol::on_editbutton_clicked()
 
 void departamentContol::on_dellbutton_clicked()
 {
-    /*QMessageBox::StandardButton reply;
+    QMessageBox::StandardButton reply;
     reply = QMessageBox::question(this, "Увага","Группи і студенти данного відділення також будуть видалені !\nВи дійсно хочете видалити данне відділення ?",
                                   QMessageBox::Yes|QMessageBox::No);
     if (reply == QMessageBox::Yes) {
+        int dep_id;
         QSqlQuery query = QSqlQuery(db.getdb());
-        query.prepare("delete from `students` where "
-                      "delete from `departaments` where `id` = :id;");
-        query.bindValue(":id",getid());
+        query.prepare("select `id` from `departaments` where `departaments`.`name` = :dep_name;");
+        query.bindValue(":dep_name",ui->comboBox->currentText());
         query.exec();
-    }*/
+        while(query.next())
+        {
+           dep_id = query.value(0).toInt();
+        }
+        query.prepare("delete from `students` where `group` in(select `id` from `groups` where `department_code` = :dep_id;");
+        query.bindValue(":dep_id",dep_id);
+        query.exec();
+        query.prepare("delete from `groups` where `groups`.`departament_code` = :dep_id");
+        query.bindValue(":dep_id",dep_id);
+        query.exec();
+        query.prepare("delete from `departaments` where `departaments`.`id` = :dep_id");
+        query.bindValue(":dep_id",dep_id);
+        query.exec();
+        getDepartamentList();
+    }
 }
