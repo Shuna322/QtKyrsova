@@ -18,7 +18,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>../Desktop/Icojam-Blue-Bits-Database-search.ico</normaloff>../Desktop/Icojam-Blue-Bits-Database-search.ico</iconset>
+    <normaloff>icon.ico</normaloff>icon.ico</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QPushButton" name="pushButton_2">
@@ -310,6 +310,18 @@
    </property>
   </action>
  </widget>
+ <tabstops>
+  <tabstop>pushButton_2</tabstop>
+  <tabstop>comboBox</tabstop>
+  <tabstop>tableView</tabstop>
+  <tabstop>pushButton_3</tabstop>
+  <tabstop>pushButton_6</tabstop>
+  <tabstop>pushButton_7</tabstop>
+  <tabstop>pushButton_5</tabstop>
+  <tabstop>pushButton_4</tabstop>
+  <tabstop>pushButton</tabstop>
+  <tabstop>pushButton_8</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

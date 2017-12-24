@@ -11,7 +11,11 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Керування студентами</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>icon.ico</normaloff>icon.ico</iconset>
   </property>
   <widget class="QSplitter" name="splitter">
    <property name="geometry">
@@ -107,6 +111,14 @@
    </widget>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>tableView</tabstop>
+  <tabstop>addSTbutton</tabstop>
+  <tabstop>viewbutton</tabstop>
+  <tabstop>edibutton</tabstop>
+  <tabstop>dellbutton</tabstop>
+  <tabstop>bbutton</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>
