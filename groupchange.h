@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include "mainwindow.h"
+#include "groupcontrol.h"
 
 namespace Ui {
 class groupchange;
@@ -13,7 +14,7 @@ class groupchange : public QDialog
     Q_OBJECT
 
 public:
-    explicit groupchange(QWidget *parent = 0, bool _mode = false, int _id = 0);
+    explicit groupchange(QWidget *parent = 0, class groupControl *_prev = 0, bool _mode = false, int _id = 0);
     void getDepartament();
     void getSpetList();
     ~groupchange();
@@ -34,6 +35,7 @@ private:
     database db;
     QSqlQueryModel *model;
     QSqlQuery *query;
+    class groupControl *prev;
 };
 
 #endif // GROUPCHANGE_H

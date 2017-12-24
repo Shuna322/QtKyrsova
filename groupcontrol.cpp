@@ -66,7 +66,7 @@ void groupControl::on_pushButton_4_clicked()
 
 void groupControl::on_pushButton_clicked()
 {
-    changeForm = new groupchange();
+    changeForm = new groupchange(0,this);
     changeForm->exec();
 }
 
@@ -81,6 +81,31 @@ void groupControl::on_pushButton_2_clicked()
     {
         groupID = query->value(0).toInt();
     }
-    changeForm = new groupchange(0,true,groupID);
+    changeForm = new groupchange(0,this,true,groupID);
     changeForm->exec();
+}
+
+void groupControl::on_pushButton_3_clicked()
+{
+    QMessageBox::StandardButton reply;
+    reply = QMessageBox::question(this, "Увага","Студенти данної групи також будуть видалені !\nВи дійсно хочете видалити данну групу ?",
+                                  QMessageBox::Yes|QMessageBox::No);
+    if (reply == QMessageBox::Yes) {
+        int groupID;
+        QSqlQuery query = QSqlQuery(db.getdb());
+        query.prepare("select `id` from `groups` where `groups`.`code` = :code;");
+        query.bindValue(":code",ui->comboBox_3->currentText());
+        query.exec();
+        while(query.next())
+        {
+           groupID = query.value(0).toInt();
+        }
+        query.prepare("delete from `students` where `students`.`group` = :id;");
+        query.bindValue(":id",groupID);
+        query.exec();
+        query.prepare("delete from `groups` where `groups`.`code` = '"+ui->comboBox_3->currentText()+"'");
+        query.exec();
+    }
+    qDebug() << query->lastError();
+    getDataFromDb();
 }

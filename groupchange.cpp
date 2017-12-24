@@ -1,8 +1,8 @@
 #include "groupchange.h"
 #include "ui_groupchange.h"
 
-groupchange::groupchange(QWidget *parent, bool _mode, int _id) :
-    QDialog(parent), mode(_mode), id(_id),
+groupchange::groupchange(QWidget *parent, class groupControl *_prev, bool _mode, int _id) :
+    QDialog(parent), mode(_mode), id(_id), prev(_prev),
     ui(new Ui::groupchange)
 {
     ui->setupUi(this);
@@ -121,4 +121,5 @@ void groupchange::on_pushButton_clicked()
     query.exec();
     qDebug() << query.lastError();
     this->hide();
+    prev->getDataFromDb();
 }
