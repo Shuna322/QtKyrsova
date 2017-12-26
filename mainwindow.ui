@@ -49,9 +49,6 @@
     <property name="sortingEnabled">
      <bool>false</bool>
     </property>
-    <attribute name="horizontalHeaderVisible">
-     <bool>false</bool>
-    </attribute>
     <attribute name="horizontalHeaderDefaultSectionSize">
      <number>100</number>
     </attribute>

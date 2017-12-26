@@ -201,17 +201,17 @@
      <widget class="QComboBox" name="comboBox_3">
       <item>
        <property name="text">
-        <string>1</string>
+        <string>Гість</string>
        </property>
       </item>
       <item>
        <property name="text">
-        <string>2</string>
+        <string>Оператор</string>
        </property>
       </item>
       <item>
        <property name="text">
-        <string>3</string>
+        <string>Адміністратор</string>
        </property>
       </item>
      </widget>

@@ -14,7 +14,7 @@ class studentControl : public QWidget
     Q_OBJECT
 
 public:
-    explicit studentControl(QWidget *parent = 0, class MainWindow *_prevWind = 0, int _groupid = 0);
+    explicit studentControl(QWidget *parent = 0, class MainWindow *_prevWind = 0, int _groupid = 0, int _acces = 1);
     void getinfofromBD();
     ~studentControl();
 
@@ -40,6 +40,7 @@ private:
     int groupID, studentID;
     class MainWindow *prevWind;
     database db;
+    int acces;
     QSqlQueryModel *model;
     class addStudentForm *addStudent;
     class studentInformation *infoForm;

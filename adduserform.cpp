@@ -43,7 +43,7 @@ void addUserForm::on_pushButton_2_clicked()
     tname = ui->lineEdit_3->text();
     sex =(bool) ui->comboBox->currentIndex();
     bday = ui->dateEdit->date();
-    type_of_acces = ui->comboBox_3->currentText().toInt();
+    type_of_acces = ui->comboBox_3->currentIndex()+1;
     phone_number = ui->lineEdit_7->text();
     adress = ui->lineEdit_8->text();
     user us(name,sname,tname,sex,bday,phone_number,adress,type_of_acces,login,pass);
