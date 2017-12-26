@@ -49,6 +49,7 @@ void departamentContol::on_bbutton_clicked()
 void departamentContol::on_addbutton_clicked()
 {
     changeform = new departamentChange ();
+    changeform->setFixedSize(changeform->size());
     changeform->exec();
     getDepartamentList();
 }
@@ -56,6 +57,7 @@ void departamentContol::on_addbutton_clicked()
 void departamentContol::on_editbutton_clicked()
 {
     changeform = new departamentChange (0,true,getid());
+    changeform->setFixedSize(changeform->size());
     changeform->exec();
     getDepartamentList();
 }
