@@ -71,7 +71,7 @@ void studentControl::on_viewbutton_clicked()
 void studentControl::on_addSTbutton_clicked()
 {
     this->hide();
-    addStudent = new addStudentForm(0,0,this,true,studentID);
+    addStudent = new addStudentForm(0,0,this);
     addStudent->setFixedSize(addStudent->size());
     addStudent->show();
     getinfofromBD();
