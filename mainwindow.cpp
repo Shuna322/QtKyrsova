@@ -21,13 +21,13 @@ MainWindow::MainWindow(QWidget *parent, QString _l, QString _p, class Widget *_p
         ui->pushButton_2->setEnabled(0); ui->action->setEnabled(0);
         ui->pushButton_3->setEnabled(0); ui->action_2->setEnabled(0);
         ui->pushButton_5->setEnabled(0);
-        ui->pushButton_6->setEnabled(0); ui->action_4->setEnabled(0);
+        ui->pushButton_6->setEnabled(0); ui->action_6->setEnabled(0);
         break;
     }
     case 2: {
         ui->pushButton_5->setEnabled(0); ui->action->setEnabled(0);
         ui->pushButton_3->setEnabled(0); ui->action_2->setEnabled(0);
-        ui->pushButton_6->setEnabled(0);
+        ui->pushButton_6->setEnabled(0); ui->action_6->setEnabled(0);
         break;
     }
     case 3 : {
@@ -103,24 +103,10 @@ void MainWindow::on_pushButton_4_clicked()
 
 void MainWindow::on_tableView_doubleClicked(const QModelIndex &index)
 {
-    if (userobj.getacces() >= 2)
-    {
         QModelIndex x = QModelIndex(index.sibling(index.row(),0));
         openGroupInfo(x.data().toInt());
-    }
 }
 
-void MainWindow::on_action_triggered()
-{
-}
-
-void MainWindow::on_action_2_triggered()
-{
-}
-
-void MainWindow::on_action_3_triggered()
-{
-}
 
 void MainWindow::openGroupInfo(int x)
 {
@@ -235,4 +221,19 @@ void MainWindow::on_pushButton_6_clicked()
     groupConForm->setFixedSize(groupConForm->size());
     this->hide();
     groupConForm->show();
+}
+
+void MainWindow::on_action_triggered()
+{
+    on_pushButton_3_clicked();
+}
+
+void MainWindow::on_action_2_triggered()
+{
+    on_pushButton_6_clicked();
+}
+
+void MainWindow::on_action_3_triggered()
+{
+    on_pushButton_clicked();
 }

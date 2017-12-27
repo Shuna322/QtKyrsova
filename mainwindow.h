@@ -35,12 +35,6 @@ private slots:
 
     void on_tableView_doubleClicked(const QModelIndex &index);
 
-    void on_action_triggered();
-
-    void on_action_2_triggered();
-
-    void on_action_3_triggered();
-
     void openGroupInfo(int x);
 
     void on_pushButton_8_clicked();
@@ -68,6 +62,12 @@ private slots:
     void on_pushButton_3_clicked();
 
     void on_pushButton_6_clicked();
+
+    void on_action_triggered();
+
+    void on_action_2_triggered();
+
+    void on_action_3_triggered();
 
 private:
     Ui::MainWindow *ui;
