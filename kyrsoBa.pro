@@ -69,3 +69,6 @@ FORMS += \
     departamentchange.ui \
     groupcontrol.ui \
     groupchange.ui
+
+DISTFILES += \
+    icon.ico
