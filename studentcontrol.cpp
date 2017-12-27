@@ -82,13 +82,6 @@ void studentControl::on_viewbutton_clicked()
 
 void studentControl::on_addSTbutton_clicked()
 {
-<<<<<<< HEAD
-    this->hide();
-    addStudent = new addStudentForm(0,0,this);
-    addStudent->setFixedSize(addStudent->size());
-    addStudent->show();
-    getinfofromBD();
-=======
     if (acces >= 2)
     {
         this->hide();
@@ -97,7 +90,6 @@ void studentControl::on_addSTbutton_clicked()
         addStudent->show();
         getinfofromBD();
     }
->>>>>>> bc314898962af66e0846fdccb5a470107c15aff1
 }
 
 void studentControl::on_tableView_clicked(const QModelIndex &index)
