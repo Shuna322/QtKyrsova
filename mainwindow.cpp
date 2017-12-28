@@ -110,16 +110,10 @@ void MainWindow::on_tableView_doubleClicked(const QModelIndex &index)
 
 void MainWindow::openGroupInfo(int x)
 {
-    infoForm = new studentControl(0, this, x);
+    infoForm = new studentControl(0, this, x, userobj.getacces());
     infoForm->setFixedSize(infoForm->size());
     this->hide();
     infoForm->show();
-}
-
-void MainWindow::on_pushButton_8_clicked()
-{
-    QDesktopServices::openUrl(QUrl("https://i.imgur.com/xGZuM7V.png", QUrl::TolerantMode));
-    QMessageBox::information(0,"Не скучайте","На досузі можете порозгадувати",QMessageBox::Ok);
 }
 
 void MainWindow::on_pushButton_5_clicked()

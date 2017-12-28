@@ -8,7 +8,7 @@ studentControl::studentControl(QWidget *parent, MainWindow *_prevWind, int _grou
     ui->setupUi(this);
     studentID = 0;
     getinfofromBD();
-    if (acces =1)
+    if (acces == 1)
         ui->addSTbutton->setEnabled(0);
 }
 

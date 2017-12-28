@@ -89,22 +89,6 @@
      </property>
     </item>
    </widget>
-   <widget class="QPushButton" name="pushButton_8">
-    <property name="geometry">
-     <rect>
-      <x>450</x>
-      <y>260</y>
-      <width>31</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="flat">
-     <bool>true</bool>
-    </property>
-   </widget>
    <widget class="QPushButton" name="pushButton_3">
     <property name="geometry">
      <rect>
@@ -203,7 +187,6 @@
    <zorder>pushButton_3</zorder>
    <zorder>pushButton_6</zorder>
    <zorder>pushButton_7</zorder>
-   <zorder>pushButton_8</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -317,7 +300,6 @@
   <tabstop>pushButton_5</tabstop>
   <tabstop>pushButton_4</tabstop>
   <tabstop>pushButton</tabstop>
-  <tabstop>pushButton_8</tabstop>
  </tabstops>
  <resources/>
  <connections/>
