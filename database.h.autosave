@@ -1,0 +1,28 @@
+#ifndef DATABASE_H
+#define DATABASE_H
+#include <QWidget>
+#include <QString>
+#include <Qsql>
+#include <QSqlDriver>
+#include <QSqlDatabase>
+#include <QtSql/QSqlQuery>
+#include <QtSql/QSqlDatabase>
+#include <QtSql/QSqlTableModel>
+#include <QtSql/QSqlError>
+#include <QSqlRecord>
+#include <QDebug>
+#include <QSqlQuery>
+
+class database
+{
+    QSqlDatabase db;
+
+public:
+
+    database();
+    void connect();
+    QSqlDatabase getdb();
+    bool loginVerification(QString _l, QString _p);
+};
+
+#endif // DATABASE_H

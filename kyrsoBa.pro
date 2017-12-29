@@ -70,5 +70,4 @@ FORMS += \
     groupcontrol.ui \
     groupchange.ui
 
-DISTFILES += \
-    icon.ico
+DISTFILES +=

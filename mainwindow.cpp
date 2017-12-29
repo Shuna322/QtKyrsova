@@ -1,11 +1,5 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include <QDebug>
-#include <QModelIndex>
-#include <QUrl>
-#include <QDesktopServices>
-#include "studentinformation.h"
-
 
 MainWindow::MainWindow(QWidget *parent, QString _l, QString _p, class Widget *_prev) :
     QMainWindow(parent), prev(_prev),

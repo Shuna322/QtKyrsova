@@ -11,6 +11,9 @@
 #include "groupcontrol.h"
 #include <QMessageBox>
 #include <QLineEdit>
+#include <QDebug>
+#include <QModelIndex>
+#include "studentinformation.h"
 
 namespace Ui {
 class MainWindow;
